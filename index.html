@@ -28,23 +28,26 @@
         <nav class="hero-nav">
           <div class="hero-nav-left">
             <span class="nav-dot"></span>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#journey">Journey</a>
+            <a href="#work" data-i18n="nav.work">Work</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+            <a href="#journey" data-i18n="nav.journey">Journey</a>
           </div>
-          <a href="#contact" class="nav-cta">⮑ Start a project</a>
+          <div class="hero-nav-right">
+            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+            <a href="#contact" class="nav-cta" data-i18n="nav.cta">⮑ Start a project</a>
+          </div>
         </nav>
         <div class="hero-intro">
-          <p>我是 Roger，base 上海。有足够强烈的好奇心和颠覆欲，习惯以玩乐和实验的心态去做事，也因此常常能在高强度创造中保持效率与热情。不迷信既有规则，不拘泥于条条框框，敢于挑战权威，也敢在必要的时候掀桌重来。</p>
+          <p data-i18n="hero.intro">我是 Roger，base 上海。有足够强烈的好奇心和颠覆欲，习惯以玩乐和实验的心态去做事，也因此常常能在高强度创造中保持效率与热情。不迷信既有规则，不拘泥于条条框框，敢于挑战权威，也敢在必要的时候掀桌重来。</p>
           <div class="hero-meta">
             <div class="hero-meta-item">
               <span class="label">Focus</span>
-              <span>Agent Orchestration, Growth, PMF</span>
+              <span data-i18n="hero.focus">Agent Orchestration, Growth, PMF</span>
             </div>
             <div class="hero-meta-item">
-              <span class="label">Currently</span>
-              <span>M.S. at UCAS · Open to collaboration</span>
+              <span class="label" data-i18n="hero.currentlyLabel">Currently</span>
+              <span data-i18n="hero.currently">M.S. at UCAS · Open to collaboration</span>
             </div>
           </div>
         </div>
@@ -53,14 +56,14 @@
       <!-- Work -->
       <section id="work" class="section">
         <div class="section-header">
-          <h2>Work</h2>
-          <p class="section-desc">Selected projects I'm building or have contributed to.</p>
+          <h2 data-i18n="work.title">Work</h2>
+          <p class="section-desc" data-i18n="work.desc">Selected projects I'm building or have contributed to.</p>
         </div>
         <div class="work-list">
           <a href="#" class="work-item">
             <div class="work-item-info">
               <h3>zhuangleme</h3>
-              <p>一款社交探索类应用，研究"表达策略、身份包装与社交认知"。把年轻人日常社交中的隐性规则做成可学习、可互动、可传播的产品体验。</p>
+              <p data-i18n="work.zhuangleme">一款社交探索类应用，研究"表达策略、身份包装与社交认知"。把年轻人日常社交中的隐性规则做成可学习、可互动、可传播的产品体验。</p>
             </div>
             <div class="work-item-meta">
               <span class="tag">Social + AI</span>
@@ -70,7 +73,7 @@
           <a href="#" class="work-item">
             <div class="work-item-info">
               <h3>Veritex</h3>
-              <p>通过语义理解实现高效文献检索。以 Chat & Search 交互为核心，结合 LangGraph 架构做意图识别、关键词扩展与多源融合排序。</p>
+              <p data-i18n="work.veritex">通过语义理解实现高效文献检索。以 Chat & Search 交互为核心，结合 LangGraph 架构做意图识别、关键词扩展与多源融合排序。</p>
             </div>
             <div class="work-item-meta">
               <span class="tag">Research Agent</span>
@@ -79,35 +82,35 @@
           </a>
         </div>
         <div class="note-block">
-          <p>Aesthetic note — 我喜欢让产品像一部好电影，既有情绪张力，也有克制的结构感，同时也能够在业务和真实需求中生长。</p>
-          <p>Future directions — A2A · 智能硬件 · Context sensor for agent</p>
+          <p data-i18n="work.note1">Aesthetic note — 我喜欢让产品像一部好电影，既有情绪张力，也有克制的结构感，同时也能够在业务和真实需求中生长。</p>
+          <p data-i18n="work.note2">Future directions — A2A · 智能硬件 · Context sensor for agent</p>
         </div>
       </section>
 
       <!-- About -->
       <section id="about" class="section">
         <div class="section-header">
-          <h2>About</h2>
-          <p class="section-desc">一个会写 PRD、能上代码、也盯增长的数据导向产品人。</p>
+          <h2 data-i18n="about.title">About</h2>
+          <p class="section-desc" data-i18n="about.desc">一个会写 PRD、能上代码、也盯增长的数据导向产品人。</p>
         </div>
         <div class="about-content">
           <div class="about-portrait">
             <img src="assets/images/roger-hero.jpg" alt="杨皓然" />
           </div>
           <div class="about-text">
-            <p>中国科学院大学硕士在读，聚焦 AI 产品从 PMF 验证到 MVP 落地。崇尚创意、艺术与科技的融合，也执着于增长和 ROI。</p>
+            <p data-i18n="about.bio">中国科学院大学硕士在读，聚焦 AI 产品从 PMF 验证到 MVP 落地。崇尚创意、艺术与科技的融合，也执着于增长和 ROI。</p>
             <div class="capabilities">
               <div class="capability">
                 <h4>Builder</h4>
-                <p>自主完成 AI 产品全栈开发，习惯快速试错并记录复盘，能在不确定中推进到可上线状态。</p>
+                <p data-i18n="about.builder">自主完成 AI 产品全栈开发，习惯快速试错并记录复盘，能在不确定中推进到可上线状态。</p>
               </div>
               <div class="capability">
                 <h4>Operator</h4>
-                <p>注重留存、转化与复购，通过指标看板和用户反馈闭环，持续校准功能优先级与商业价值。</p>
+                <p data-i18n="about.operator">注重留存、转化与复购，通过指标看板和用户反馈闭环，持续校准功能优先级与商业价值。</p>
               </div>
               <div class="capability">
                 <h4>Leader</h4>
-                <p>4人团队负责人，承担产品方向、部分开发与运营协同，推动设计、技术与市场节奏一致。</p>
+                <p data-i18n="about.leader">4人团队负责人，承担产品方向、部分开发与运营协同，推动设计、技术与市场节奏一致。</p>
               </div>
             </div>
           </div>
@@ -115,8 +118,8 @@
         <div class="belief-block">
           <img src="assets/images/cat.jpg" alt="猫咪" />
           <div>
-            <p class="belief-quote">保持好奇，比保持正确更重要。</p>
-            <p>我会把灵感记在随手笔记里，来自电影、音乐、街头对话，也来自和团队的每次复盘。复杂问题先拆小，先跑起来，再打磨成作品。</p>
+            <p class="belief-quote" data-i18n="about.beliefQuote">保持好奇，比保持正确更重要。</p>
+            <p data-i18n="about.beliefText">我会把灵感记在随手笔记里，来自电影、音乐、街头对话，也来自和团队的每次复盘。复杂问题先拆小，先跑起来，再打磨成作品。</p>
           </div>
         </div>
       </section>
@@ -124,8 +127,8 @@
       <!-- Gallery -->
       <section id="gallery" class="section">
         <div class="section-header">
-          <h2>Gallery</h2>
-          <p class="section-desc">生活瞬间也是灵感。</p>
+          <h2 data-i18n="gallery.title">Gallery</h2>
+          <p class="section-desc" data-i18n="gallery.desc">生活瞬间也是灵感。</p>
         </div>
         <div class="gallery-grid">
           <figure class="gallery-item vertical">
@@ -148,7 +151,7 @@
           </figure>
         </div>
         <div class="film-row">
-          <h3>Favorite Films</h3>
+          <h3 data-i18n="gallery.filmTitle">Favorite Films</h3>
           <div class="film-list">
             <figure class="film-card">
               <img src="assets/images/gallery/img-2294.jpg" alt="La La Land" loading="lazy" />
@@ -168,7 +171,7 @@
               <img src="assets/images/gallery/img-2296.jpg" alt="侧耳倾听" loading="lazy" />
               <figcaption>
                 <span class="film-rank">03</span>
-                <span>侧耳倾听</span>
+                <span data-i18n="gallery.film3">侧耳倾听</span>
               </figcaption>
             </figure>
           </div>
@@ -178,29 +181,29 @@
       <!-- Journey -->
       <section id="journey" class="section">
         <div class="section-header">
-          <h2>Journey</h2>
-          <p class="section-desc">把研究、产品与业务放进同一条实践路径里。</p>
+          <h2 data-i18n="journey.title">Journey</h2>
+          <p class="section-desc" data-i18n="journey.desc">把研究、产品与业务放进同一条实践路径里。</p>
         </div>
         <div class="timeline">
           <article class="timeline-entry">
             <div class="timeline-date">2025.10 — 2026.03</div>
             <div class="timeline-body">
-              <h4>蔚来汽车 NOMI 团队 <span class="timeline-role">AI 产品经理</span></h4>
-              <p>主导车载 Agent 智能化评测闭环，从需求定义、评测集设计到结果归因与版本准出形成统一框架，并推动跨域多轮 Benchmark 与数据治理落地。</p>
+              <h4 data-i18n="journey.nio.title">蔚来汽车 NOMI 团队 <span class="timeline-role">AI 产品经理</span></h4>
+              <p data-i18n="journey.nio.desc">主导车载 Agent 智能化评测闭环，从需求定义、评测集设计到结果归因与版本准出形成统一框架，并推动跨域多轮 Benchmark 与数据治理落地。</p>
             </div>
           </article>
           <article class="timeline-entry">
             <div class="timeline-date">2025.06 — 2025.09</div>
             <div class="timeline-body">
-              <h4>36氪·职升未来 <span class="timeline-role">AI 求职产品实习生</span></h4>
-              <p>围绕 AI 求职产品做用户洞察、Prompt 体验优化与增长实验，沉淀 15+ 项指标看板并分析 500+ 条反馈，推动 7 日留存提升 15%，互动时长提升 30%。</p>
+              <h4 data-i18n="journey.kr.title">36氪·职升未来 <span class="timeline-role">AI 求职产品实习生</span></h4>
+              <p data-i18n="journey.kr.desc">围绕 AI 求职产品做用户洞察、Prompt 体验优化与增长实验，沉淀 15+ 项指标看板并分析 500+ 条反馈，推动 7 日留存提升 15%，互动时长提升 30%。</p>
             </div>
           </article>
           <article class="timeline-entry">
             <div class="timeline-date">2024.06 — 2024.09</div>
             <div class="timeline-body">
-              <h4>上海易碳 <span class="timeline-role">AI 产品实习生</span></h4>
-              <p>参与工业碳核算 SaaS 建设，推动预测模型精度达标（MAPE &lt; 8%）并完成 API 产品化封装，同时协同梳理企业碳合规需求并推进 PRD 交付。</p>
+              <h4 data-i18n="journey.yitan.title">上海易碳 <span class="timeline-role">AI 产品实习生</span></h4>
+              <p data-i18n="journey.yitan.desc">参与工业碳核算 SaaS 建设，推动预测模型精度达标（MAPE &lt; 8%）并完成 API 产品化封装，同时协同梳理企业碳合规需求并推进 PRD 交付。</p>
             </div>
           </article>
         </div>
@@ -209,8 +212,8 @@
       <!-- Contact -->
       <section id="contact" class="section">
         <div class="section-header">
-          <h2>Get in touch</h2>
-          <p class="section-desc">如果你也有野心做一款伟大的产品，我们可以聊聊。</p>
+          <h2 data-i18n="contact.title">Get in touch</h2>
+          <p class="section-desc" data-i18n="contact.desc">如果你也有野心做一款伟大的产品，我们可以聊聊。</p>
         </div>
         <div class="contact-links">
           <a href="mailto:yanghaoran24@mails.ucas.ac.cn" class="contact-link">
@@ -247,7 +250,7 @@
         <span>© 2026 Roger Yang</span>
       </div>
       <div class="footer-right">
-        <span>Designed & built with focus, speed, and taste.</span>
+        <span data-i18n="footer.text">Designed & built with focus, speed, and taste.</span>
       </div>
     </footer>
 
@@ -256,6 +259,7 @@
       <img class="lightbox-image" alt="放大预览" />
     </dialog>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
