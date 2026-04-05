@@ -2,10 +2,25 @@
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* --- Mega letter interactive effects --- */
+/* --- Mega name: auto-fit to viewport width --- */
 
 const megaLetters = document.querySelectorAll(".mega-letter");
 const megaName = document.querySelector(".mega-name");
+
+function fitMegaName() {
+  if (!megaName) return;
+  const vw = window.innerWidth;
+  // Start with a large size, measure, then scale
+  let size = 200;
+  megaName.style.fontSize = size + "px";
+  let width = megaName.scrollWidth;
+  // Scale so text fills the full viewport width
+  const ratio = vw / width;
+  megaName.style.fontSize = (size * ratio) + "px";
+}
+
+fitMegaName();
+window.addEventListener("resize", fitMegaName);
 
 if (!prefersReducedMotion && megaName) {
   // Mouse proximity: letters react to cursor distance

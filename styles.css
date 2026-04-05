@@ -76,27 +76,28 @@ img {
 
 .hero-banner {
   width: 100%;
-  padding-top: clamp(1rem, 3vw, 2rem);
   overflow: hidden;
 }
 
 .mega-name {
-  display: flex;
-  justify-content: center;
+  display: block;
   width: 100%;
-  padding: 0 var(--page-pad);
+  padding: 0;
   margin: 0;
-  line-height: 0.82;
   user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Anton", Impact, "Arial Black", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 0.9;
+  /* Use a large font-size, then scale to fit via JS */
+  font-size: 10vw;
 }
 
 .mega-letter {
   display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(6rem, 18.5vw, 20rem);
-  letter-spacing: -0.05em;
-  color: var(--black);
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1),
               opacity 400ms ease;
   cursor: default;
@@ -105,12 +106,7 @@ img {
 
 .mega-letter:hover {
   transform: translateY(-8px) scaleY(1.03);
-  opacity: 0.75;
-}
-
-/* Letter spacing for geometric feel */
-.mega-name {
-  gap: clamp(0.1rem, 0.3vw, 0.35rem);
+  opacity: 0.7;
 }
 
 /* ---- Hero Nav (below mega name) ---- */
@@ -668,7 +664,7 @@ img {
   }
 
   .mega-letter {
-    font-size: clamp(4rem, 18vw, 8rem);
+    font-size: clamp(4rem, 19vw, 8rem);
   }
 
   .hero-nav {
