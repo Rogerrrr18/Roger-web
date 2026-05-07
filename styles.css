@@ -566,14 +566,15 @@ img {
 }
 
 .blog-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1.5rem 3rem;
+  padding: 2.25rem 0;
   border-bottom: 1px solid var(--gray-200);
   text-decoration: none;
   transition: padding-left 300ms ease;
+  position: relative;
 }
 
 .blog-item:first-child {
@@ -588,53 +589,91 @@ img {
   transform: translateX(4px);
 }
 
+/* Left column: full-width info block */
 .blog-item-info {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.blog-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .blog-item-info h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   line-height: 1.35;
-  margin-bottom: 0.5rem;
   color: var(--black);
+  transition: opacity 200ms ease;
+}
+
+.blog-item:hover .blog-item-info h3 {
+  opacity: 0.75;
 }
 
 .blog-item-info p {
   font-size: 0.875rem;
   color: var(--gray-500);
-  max-width: 58ch;
-  line-height: 1.65;
+  line-height: 1.7;
+  max-width: 66ch;
 }
 
-.blog-item-meta {
+.blog-item-footer {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-  flex-shrink: 0;
-  padding-top: 0.15rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.blog-tag {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
 .blog-read-time {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: var(--gray-400);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* Right column: arrow */
+.blog-item-arrow {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.2rem;
+  color: var(--gray-400);
+  font-size: 1rem;
+  transition: transform 300ms ease, color 200ms ease;
+}
+
+.blog-item:hover .blog-item-arrow {
+  transform: translateX(4px);
+  color: var(--black);
 }
 
 @media (max-width: 768px) {
   .blog-item {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
-  .blog-item-meta {
-    flex-direction: row;
-    align-items: center;
+  .blog-item-arrow {
+    display: none;
   }
 }
 
