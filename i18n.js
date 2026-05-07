@@ -6,11 +6,11 @@ const translations = {
     "nav.about": "About",
     "nav.gallery": "Gallery",
     "nav.journey": "Journey",
-    "nav.writing": "Writing",
+    "nav.blog": "Blog",
     "nav.cta": "⮑ Start a project",
 
-    "writing.title": "Writing",
-    "writing.desc": "关于 AI 产品、评测与行业趋势的独立观察。",
+    "blog.title": "Blog",
+    "blog.desc": "关于 AI 产品、评测与行业趋势的独立观察。",
 
     "hero.intro": "我是 Roger，base 上海。有足够强烈的好奇心和颠覆欲，习惯以玩乐和实验的心态去做事，也因此常常能在高强度创造中保持效率与热情。不迷信既有规则，不拘泥于条条框框，敢于挑战权威，也敢在必要的时候掀桌重来。",
     "hero.focus": "Agent Orchestration, Growth, PMF",
@@ -58,11 +58,11 @@ const translations = {
     "nav.about": "About",
     "nav.gallery": "Gallery",
     "nav.journey": "Journey",
-    "nav.writing": "Writing",
+    "nav.blog": "Blog",
     "nav.cta": "⮑ Start a project",
 
-    "writing.title": "Writing",
-    "writing.desc": "Independent observations on AI products, evaluation, and industry trends.",
+    "blog.title": "Blog",
+    "blog.desc": "Independent observations on AI products, evaluation, and industry trends.",
 
     "hero.intro": "I'm Roger, based in Shanghai. Endlessly curious, restless by nature. I treat every project like play and every constraint like an invitation. That energy keeps me sharp through long creative pushes. No sacred rules, no borrowed frameworks — just the willingness to challenge what's there and, when needed, tear it all down and start over.",
     "hero.focus": "Agent Orchestration, Growth, PMF",
