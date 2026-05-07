@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>别再只看任务完成率了：Agent Planning 评测的真正位置 — Roger Yang</title>
+    <meta name="description" content="任务完成率只是在问你最后有没有把活交上来；Planning 评测真正问的是：你有没有先想清楚路径、有没有走弯路、有没有浪费预算。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../writing.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="article-site-header">
+      <a href="../index.html" class="article-back-home">Roger Yang</a>
+      <nav class="article-header-nav">
+        <a href="../index.html#writing">Writing</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article>
+        <div class="article-meta-top">
+          <span class="article-tag-badge">Agent 评测</span>
+          <span class="article-reading-time">15 min read</span>
+        </div>
+        <h1 class="article-title">别再只看任务完成率了：Agent Planning 评测的真正位置</h1>
+        <div class="article-body">
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/7DKRKf5pG6OIzGl5oOjq35h1nZx5L7zjsuh3pGDv7ooEiaIVfO14mXED8VRibxnFasj59xNOR2PGd0lbiaicSLC3TEuicQAB18MX5bgITTfh2OKA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>最近一年，Agent 赛道有一个很明显的错觉：很多系统看上去已经“会做事”了，于是大家默认它们也“会规划”了。但这两件事，其实不是一回事。</p>
+<p>一个 Agent 能把事情做完，不代表它知道<strong>先做什么、后做什么、为什么这样做、代价是否最低、环境变了以后会不会重规划</strong>。读完这篇论文《CostBench》我发现：我们过去对 Agent 的评测，太偏向“有没有做成”，却低估了“是不是以正确、经济、稳定的方式做成”。</p>
+<p>如果把今天的 Agent 比作一个新入职的高级助理，那么“任务完成率”只是在问：你最后有没有把活交上来；而 “Planning 评测”真正问的是：你有没有先想清楚路径、有没有走弯路、有没有浪费预算、遇到突发情况能不能立刻调整方案。这才是 Agent 能不能走向生产、能不能真正替代流程劳动的分水岭。</p>
+<p>我想这篇论文，回答了我两个非常重要的问题：Agent Planning 评测这些年到底走到了哪一步？以及Planning 评测在整个 Agent 评测体系里，究竟处在什么位置，为什么它对技术人、产品人和 CEO 都重要？</p>
+<hr class="article-divider" />
+<h3 class="article-h3">一、为什么今天必须重新理解 Agent Planning 评测</h3>
+<p>从学术上看，planning 一直是智能体研究的核心命题。早在 PlanBench 中，研究者就明确提出：规划和对“动作—状态变化”的推理，是衡量模型智能的重要能力，不能只靠常识问答或开放式任务来替代。PlanBench 的意义在于，它把 LLM 拉回到更接近经典 AI planning 的问题框架里：给定初始状态、目标状态和动作规则，模型到底能不能真的形成可执行计划，而不是只是“好像懂了但没有实际行动”。</p>
+<p>但随着 Agent 从“纸面推理”走向“调用工具、交互环境、处理多轮任务”，planning 的含义也变了。它不再只是“生成一个计划文本”，而变成了更接近真实工作流的能力：<strong>路径搜索、工具编排、约束满足、资源权衡、用户偏好理解，以及执行中的重规划</strong>。TravelPlanner 把评测推进到更真实的旅行规划场景，开始关注现实约束下的计划生成；ToolSandbox 和 τ-bench 又进一步把评测推进到有状态工具、模拟用户、多轮对话和规则遵循；UserBench 则让“用户目标不完整、偏好逐步暴露”成为评测前提，逼着 Agent 在问答中主动澄清和协同。</p>
+<p>这意味着，Planning 评测已经从一个相对“理想化”的能力测试，逐步演化成 Agent 系统中的<strong>中枢能力评测</strong>：它不只是考模型会不会想，更是在考模型能不能把“想—做—改”串成一条稳定的闭环。相关综述也把 planning 与 reasoning 归为 Agent capability 的关键组成部分，与工具使用、记忆、多智能体协作并列；而 reliability、安全、行为结果等，又构成更上层的评测目标。换句话说，planning 不是全部，但它已经是 Agent 能力评测中最核心的一层之一。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">二、CostBench 这篇论文到底做了什么</h3>
+'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+<p>这篇文章把 Agent Planning 评测，从“能不能规划”推进到了“能不能以最低成本规划，并且在环境变化时重规划”。</p>
+<p>论文的核心批评非常直接：现有大量 Agent benchmark 主要看任务完成，却没有认真衡量资源效率与动态适应能力。也就是说，一个 Agent 也许最后能完成任务，但它可能调用了太多工具、走了太多冤枉路、没有真正识别最低成本路径，甚至环境一变就崩。</p>
+<p>为了解决这个问题，CostBench 设计了一个以旅行规划为载体的可扩展 benchmark。它把任务拆成六类旅行场景，并统一抽象成四阶段流程：识别偏好、搜索候选、过滤候选、最终选择。每一步都对应原子工具；同时它又把连续若干原子工具打包成复合工具，让同一个目标可以由不同路径完成。工具成本不是固定死的，而是对每个样本重新随机分配；复合工具的成本等于其组成工具成本之和，再加上高斯噪声。这就制造出了一个真正值得评测 planning 的环境：<strong>同一个目标，有多条可行路径，而且每条路径的成本不一样，还会变化。</strong></p>
+<p>更关键的是，CostBench 不是静态 benchmark。它引入了四类动态阻塞事件：工具被禁用、用户偏好改变、工具成本变化、部分复合工具被移除。前两类是显式变化，Agent 会被明确告知；后两类是隐式变化，Agent 需要自己发现原来的最优路径已经不再最优。论文其实在这里测试的是一个非常接近真实生产的问题：<strong>Agent 不是在解一道做完就结束的题，而是在一个会变的世界里持续做决策。</strong></p>
+'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+<p>从维度上看，作者把自己和 PlanBench、ToolBench、TravelPlanner、UserBench、MCP-Bench、MINT 等工作做了对比。作者的主张很明确：此前 benchmark 往往只能覆盖其中一些维度，比如多轮交互、工具使用、动态状态或可调难度，但很少能同时覆盖“多轮 + 成本最优规划 + 灵活成本 + 动态变化”这几个关键特征，而 CostBench 正是在这个交集上补位。</p>
+'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+<hr class="article-divider" />
+<h3 class="article-h3">三、它揭开的三个现实</h3>
+<h4 class="article-h4">1. 高任务完成率，不等于高规划能力</h4>
+<p>在静态设定、任务长度为 5 的情况下，很多模型的任务完成率其实不低：比如 Claude-Sonnet-4 的 TCR 达到 93.58%，GPT-4o 也有 90.29%。但如果看“精确匹配最优工具路径”的 EMR，Claude 只有 59.84%，GPT-4o 更是只有 13.65%。这说明什么？说明很多模型最后给出了正确答案，但并不是沿着成本最优、过程正确的路径做出来的。</p>
+<p>这件事对行业特别重要。因为很多团队今天还在用“最终答对了没”“用户任务成没成”来判断 Agent 是否成熟，但从 CostBench 的结果看，这样的指标会严重高估系统能力。它会让你误以为 Agent 已经足够可用，实际上它只是“侥幸做成”，而不是“可靠地做成”。</p>
+<h4 class="article-h4">2. 规划长度一上去，当前模型就明显掉队</h4>
+<p>随着任务链条变长，模型表现会持续下滑。当 task sequence 从 5 增加到 8 时，最强模型 GPT-5 的精确路径匹配率也会掉到 75% 以下，而较弱模型甚至直接塌到接近 0。也就是说，今天很多 Agent 在短链路任务上看起来很聪明，但一旦进入更长的多步任务，planning coherence 很快就不够用了。</p>
+<p>这和现实世界是高度一致的。真实业务里，真正值钱的任务往往不是“一问一答”或“两步完成”，而是十几步甚至几十步的流程拼接。短任务能跑，不代表长流程能扛。CostBench 的价值就在于，它把这种“长流程退化”明确量化出来了。</p>
+<h4 class="article-h4">3. 真正难倒 Agent 的，不只是复杂，而是“变化”</h4>
+<p>在动态环境里，问题更严重。作者发现，四种动态阻塞中，<strong>cost change</strong> 和 <strong>ban tool</strong> 对模型打击最大。尤其是 cost change，这是一种隐式变化：环境不会明确告诉模型“你原来的计划变贵了”，模型必须自己察觉并重规划。在最困难的 cost-change 设定下，GPT-5 的 EMR 只剩 34.91%；随着阻塞事件增加，Gemini-2.5-Pro 和 Qwen3-14B 的表现都快速恶化，后者甚至在两次连续 cost change 后就接近完全失败。</p>
+<p>这其实揭示了今天 Agent 的一个本质短板：<strong>大多数系统不是不会执行，而是不擅长在执行中重新思考。</strong> 它们能沿着一条既定路径往前走，但一旦成本结构、工具可用性或用户偏好发生变化，就很难做到稳定、低代价地转向。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">四、Agent Planning 评测到底走到哪了</h3>
+'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+<p>如果把近几年的研究串起来看，我会把 Agent Planning 评测的发展分成五个阶段。</p>
+<h4 class="article-h4">第一阶段：先证明“模型到底会不会规划”</h4>
+<p>这一阶段的代表是 PlanBench。它延续了经典 planning 社区的传统，强调动作、状态变化、约束和目标达成。它的重要意义，是把 LLM 从“语言很流畅”重新拉回“决策是否正确”这件事上。这个阶段的 benchmark 更像是在回答：模型有没有真正的 planning capability，而不是只会写一个貌似合理的计划。</p>
+<h4 class="article-h4">第二阶段：把 planning 放进真实应用场景</h4>
+<p>TravelPlanner 是这个阶段很典型的工作。它把 planning 搬到旅行这个天然包含多约束、多选项、多工具调用的现实问题里，并提供大规模真实数据支撑。相比更符号化的设定，它开始逼近“真实用户真的会提什么需求”。</p>
+<h4 class="article-h4">第三阶段：加入多轮交互、用户澄清与有状态环境</h4>
+<p>到了 τ-bench、ToolSandbox、UserBench 这些工作，planning 已经不再是孤立地生成一份方案，而是变成了在对话中持续更新。τ-bench 引入模拟用户和规则遵循，ToolSandbox 强调有状态工具和中间里程碑评测，UserBench 则让用户目标本身就是模糊、逐步展开的。planning 在这里第一次真正变成“协作式规划”和“交互式规划”。</p>
+<h4 class="article-h4">第四阶段：开始认真评测动态约束与复杂约束</h4>
+<p>Flex-TravelPlanner 进一步引入了多轮约束追加与约束优先级，指出单轮任务表现并不能预测模型在动态规划中的能力；R-ConstraintBench 则把问题推进到 NP-complete 的资源约束调度，发现模型在 precedence-only 的简单设定上可能接近天花板，但一旦 downtime、temporal window、disjunctive constraints 叠加，性能就会快速崩塌。换句话说，planning 评测开始从“会不会排步骤”走向“会不会在复杂约束下稳定排步骤”。</p>
+<h4 class="article-h4">第五阶段：从“能规划”走向“能以正确成本规划，并在野外重规划”</h4>
+<p>这正是 CostBench 所在的位置。它的创新不是再造一个任务世界，而是把 planning 中长期被忽视的一维——成本——拉到台前，并且把动态变化直接嵌入评测过程。与此同时，2026 年的 WildToolBench 也从真实用户行为中总结出更“野”的挑战：组合型任务、跨轮隐式意图、任务与闲聊混杂的指令切换。它报告没有模型在其 benchmark 上准确率超过 15%，这说明现实世界最难的，不只是任务复杂，而是用户和环境本身就不规整。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">五、Planning 评测在 Agent 整体评测中的地位：它不是全部，但它是中枢</h3>
+<p>很多人会问：既然 Agent 评测还有工具使用、记忆、可靠性、安全、用户满意度，那为什么要单独强调 planning？因为 planning 处在整个 Agent 评测体系的“中间层”。</p>
+<p>最底层，是基础能力，比如理解、推理、工具 schema 识别、参数填写、上下文保持。没有这些，Agent 连动作都发不对。中间层，就是 planning：在多个候选动作和路径里，怎么选、怎么排序、怎么权衡成本、怎么处理约束、怎么在变化中改计划。最上层，则是用户结果：任务有没有完成、体验好不好、是不是安全、是不是值得上线。相关综述也把 planning 放在 capability 维度的核心位置，而 reliability 和 safety 则构成更高层的独立评测目标。</p>
+<p>所以，planning 评测的地位可以概括成一句话：</p>
+<p><strong>它不是最终商业价值本身，但它是把“模型能力”转译成“系统价值”的关键桥梁。</strong></p>
+<p>没有 planning 评测，你只能知道 Agent 大概“能不能做”；</p>
+<p>有了 planning 评测，你才开始知道 Agent “会怎么做”；</p>
+<p>再叠加可靠性、安全和成本评测，你才能判断 Agent “值不值得上线”。</p>
+<p>这也是 CostBench 最重要的思想贡献：它逼着行业承认，Agent 的评测不能只盯着结果，还要盯着<strong>达到结果的过程质量</strong>。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">六、为什么Researcher、产品经理和 CEO 都应该关心这件事</h3>
+<p>对技术团队来说，planning 评测最大的意义，是它能把 failure 拆开。任务失败，可能不是模型不会答，而是不会枚举路径、不会比较代价、不会察觉环境变化、不会在中途修正。CostBench 里就有一个非常重要的诊断信号：coverage rate。作者发现，模型显式规划到的候选路径越完整，最终表现越好；而很多模型并不是算不出最优路径，而是压根没有把候选空间真正展开。</p>
+<p>对产品经理来说，planning 评测的意义在于，它比单纯的完成率更接近真实体验。一个表面上“能完成任务”的 Agent，如果总是多绕三步、多调两个工具、多问一次废话，用户虽然可能最终拿到结果，但体验会明显变差，系统成本也会持续抬高。也就是说，planning 不只是模型问题，它直接决定产品效率和产品观感。</p>
+<p>对 CEO 和业务负责人来说，planning 评测更像是 ROI 评测的前置层。因为真正影响商业可行性的，往往不是 demo 能不能跑通，而是规模化以后，单位任务成本能不能控住、异常情况下是否还能稳住、流程自动化能不能替代人类 SOP。CostBench 的结论很适合翻译成一句商业语言：<strong>今天很多 Agent 看起来已经会干活了，但离“高性价比地稳定干活”还有很长一段路。</strong> 这不是悲观，这是非常现实的投资判断。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">七、如果今天要做 Agent 产品，Planning 评测应该怎么纳入你的评测体系</h3>
+<p>一个成熟的 Agent 评测框架，我认为至少要包含四层。</p>
+<p>第一层是结果层：任务完成率、用户满意度、正确率。</p>
+<p>第二层是过程层：路径质量、工具调用序列、是否冗余、是否出现无效调用。</p>
+<p>第三层是适应层：约束变了、工具挂了、用户改口了，能不能重规划。</p>
+<p>第四层是经济层：token、API、工具调用、时间、算力、人工介入成本。</p>
+<p>如果把第二层、第三层、第四层连起来，planning eval 就不能只是一组“推理题”，而应该是一个可以持续扰动、持续观测、持续归因的系统性实验环境。因此我认为下一代 planning 评测还会继续往三个方向走：</p>
+<p>第一个方向，是更真实的用户行为。WildToolBench 已经在往这条路上走，它告诉我们真正的难题来自用户的“野生性”，而不是 benchmark 人为构造的复杂度。</p>
+<p>第二个方向，是更真实的生产成本。CostBench 目前也承认自己的局限：它还没有把真实 API latency、真实资源消耗和随机失败完全纳入仿真，任务域也主要集中在 travel planning。未来 planning eval 一定会更贴近真实线上系统。</p>
+<p>第三个方向，是从 benchmark 走向训练闭环。CostBench 作者自己就提到，这个环境也可以作为 RL 的 playground；也就是说，planning eval 不会只用于“打分”，还会越来越多地用于“训练和修正 Agent”。</p>
+<hr class="article-divider" />
+<p>所以，planning 评测在 Agent 整体评测中的真正位置，不是一个可有可无的子模块，而是连接“模型能力”和“商业落地”的中枢层。没有它，你看见的只是 Agent 的结果；有了它，你才能看见 Agent 的决策质量；把它和可靠性、安全、用户体验放在一起，你才真正看见一个 Agent 系统能不能进入生产。未来真正拉开 Agent 产品差距的，或许会是：<strong>谁先建立起一套真正在生产环境的 Eval 体系。</strong></p>
+        </div>
+      </article>
+
+      <div class="article-back-section">
+        <a href="../index.html#writing" class="article-back-link">← 返回文章列表</a>
+      </div>
+    </main>
+
+    <footer class="site-footer" style="max-width: 760px; margin: 0 auto;">
+      <div class="footer-left">
+        <span>© 2026 Roger Yang</span>
+      </div>
+      <div class="footer-right">
+        <span>Designed &amp; built with focus, speed, and taste.</span>
+      </div>
+    </footer>
+
+    <script>
+      const glow = document.querySelector('.cursor-glow');
+      if (glow && window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', e => {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        });
+      }
+    </script>
+  </body>
+</html>

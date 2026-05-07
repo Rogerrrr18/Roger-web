@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>从 Openclaw 到 A2A：Agent 正在重写产品与商业 — Roger Yang</title>
+    <meta name="description" content="从 H2H，到 A2H，再到 A2A，连接关系正在慢慢改写。商业世界正在从「App 之间集成」走向「Agent 之间协商」。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../writing.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="article-site-header">
+      <a href="../index.html" class="article-back-home">Roger Yang</a>
+      <nav class="article-header-nav">
+        <a href="../index.html#writing">Writing</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article>
+        <div class="article-meta-top">
+          <span class="article-tag-badge">Agent</span>
+          <span class="article-reading-time">13 min read</span>
+        </div>
+        <h1 class="article-title">从 Openclaw 到 A2A：Agent 正在重写产品与商业</h1>
+        <div class="article-body">
+<h3 class="article-h3">前言</h3>
+<p>Openclaw 对我来说，还没到要轻易用“革命”来定义的程度。但它的出现，确实像一次强烈的信号，把原本分散在各处的情绪、技术进展和想象力，突然拧成了一股力量。</p>
+<p>GitHub 的 star 数在涨，社区情绪也跟着涨，很难不被卷进去。我也一度怀疑过，这里面到底有多少是真趋势，多少只是情绪放大。所以我还是习惯性地下场去用，亲自试完之后，我承认自己有不少 aha moment。</p>
+<p>回头看，这种震动并不是 Openclaw 一个人完成的。更准确地说，它像是过去一段时间里一连串小爆发的共振结果：nano banana、MCP、Claude Skill、Manus收购、还有各家模型能力的连续抬升，伴随而来的是越来越成熟的用户 AI 心智，这些原本零散的火花，在某个时刻突然对上了节拍。</p>
+<p>互联网上现在到处都在讨论“龙虾”，热闹有余，真正扎实的分析反而不算多。有时候你会忍不住觉得，自己已经想得比不少公开讨论更深；但也正因如此，更不能低估水下的暗流。很多真正有判断力的人，往往都在安静地布局。</p>
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/mmbiz_png/7DKRKf5pG6N2efeibOzfrdTplexpWvC9pZib2zDDTmPvpRVaRTalGzS10VR7rib6Dc29urPPgZ6eQpXe3jOs6kaYYlXmIqXciagHBpkP5wic0Ze8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<hr class="article-divider" />
+<h3 class="article-h3">Openclaw 为什么会在这个时刻点燃情绪？</h3>
+<p>我越来越觉得，Openclaw 最重要的地方，在于它让很多人第一次如此直观地看到，原来产品还可以被压缩到这种程度。</p>
+<p>Claude Code 很强，但它依旧带着明显的人类工作流痕迹。它是一个给人用的高效工具，帮助你更快写代码、更快调试、更快推进项目，可整个节奏仍然由人主导。Manus 更像一款完整产品，它强调的是任务闭环、交付感，以及用户对“我把事情交给它，它真的帮我做完了”的直接体感。Openclaw 带来的冲击则来自另一层：它让很多原本厚重的功能继续变薄，最后沉淀成一句话、一次调用、一个 skill。你会突然意识到，过去那些需要页面、按钮、流程和引导才能完成的事情，如今已经有机会被封装成轻量而高效的执行单元。</p>
+<p>这也是它和很多“惊艳 demo”拉开距离的地方。它给人的感觉，不只是新鲜和震撼，更是一种非常具体的结构感：很多产品，最终都可能退化为能力；很多能力，又会被重新组合、重新分发、重新计价。那一瞬间，你会明白，软件未必都要长成一个 App，工作流也未必非得被包在一个完整系统里。</p>
+<p>所以，如果一定要给 Openclaw 定性，我更愿意把它看成一次“迟到的爆发”。方向其实早就有人隐约看见了，只是过去的条件还撑不起它。模型能力不够稳定，配置流程太重，用户也没有形成足够成熟的 AI 心智，传播链路更谈不上病毒式扩散。等到今天，这些门槛同时往下掉，原本有些超前的想法，忽然就变得合理起来，甚至像是一种迟早会发生的事。</p>
+<h3 class="article-h3">当 Agent 成为入口，产品会先发生什么变化？</h3>
+<p>如果把互联网理解为一次媒介更替，那么 Agent 时代同样是在更换媒介。只是这一次，信息流动会更强调结构化、可调用和高效率。从 H2H，到 A2H，再到 A2A，连接关系正在慢慢改写。产品最后长成什么样，也越来越取决于它究竟服务谁。</p>
+<p>面向人的产品，依然需要趣味、审美、氛围感和被感受到的体验。人类从来都不是只为效率付费，我们会为了风格停留，也会为情绪价值买单。可当产品的主要使用者开始变成 agent，判断标准就会完全换一套：接口是否稳定，信息是否结构化，执行是否可靠，成本是否划算，才是更核心的事情。页面是否精致、动效是否漂亮、品牌调性是否迷人，在很多场景里都会退到后面。</p>
+<p>所以未来的产品，很可能会越来越向两个方向拉开。一端是高度结构化的能力底座，专门服务机器的理解、调用和协作；另一端是高度创意化、同时具备强审美表达的内容和体验层，继续服务人的欲望、品味和身份认同。最先感受到挤压的，往往会是中间那一大片“功能差不多、体验也普通”的产品。</p>
+<p>这也意味着，我们会先失去一些过去习以为常的东西。GUI 和 App 带来的浏览感、逛的乐趣、无目的探索，都会被压缩。许多比较、筛选、跳转和读页面的过程，会被 agent 在后台悄悄完成。换来的当然是更短的路径、更少的摩擦、更强的结果导向；一起被带走的，则是路径中的偶然性，以及一部分属于人的主动停留。互联网不会因此消失，但很多前台界面会慢慢退到幕后，变成供 agent 读取和调度的供应层。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">A2A 让商业开始从界面竞争走向协议竞争</h3>
+<p>很多人会把这波变化理解成“界面从 App 变成对话框”。这当然是表层变化，但真正被改写的，其实是交易过程本身。</p>
+<p>过去的平台经济，核心是人通过平台完成交易。你搜索、比较、咨询、付款，平台负责流量、结算和履约。现在越来越多的中间步骤开始被 agent 接手：它帮你找，帮你比，帮你谈，帮你买，而人只在关键节点做判断和授权。这样一来，交易不再是一条由用户亲手串起来的长链路，它更像一组彼此协作的执行单元：搜索 agent、推荐 agent、支付 agent、客服 agent、ERP agent，一起把一笔交易拼出来。</p>
+<p>A2A 真正重要的地方就在这里。它意味着商业世界正在从“App 之间集成”慢慢走向“Agent 之间协商”。过去大家谈多 Agent，很多时候还停留在同一家框架内部的 orchestration，本质上还是功能调度。现在行业开始认真补齐跨系统、跨厂商的协议层，这才是基础设施真正成形的信号。Google 把 A2A 捐给 Linux Foundation，并拉上 AWS、Cisco、Microsoft、Salesforce、SAP、ServiceNow 等一起推进，关键意义也正在这里：它开始从某一家公司的能力，变成行业愿意共同维护的协议层。</p>
+<p>如果粗略地看，A2A 负责的是 agent 之间的发现、协作和上下文交换，MCP 负责的是 agent 与工具、系统之间的连接，而更贴近交易与支付的部分，像 UCP、ACP 以及 Trusted Agent Protocol 这类尝试，也在补足商品信息、授权方式和可信支付的规则。当这些东西开始协议化，商业世界的焦点自然会发生偏移。未来更值钱的部分，很可能会落在发现、调用、授权、支付和信任这些关键路由上。互联网时代的重要入口曾经是页面、应用商店、搜索框和支付接口，到了 Agent 时代，入口会越来越多地沉到协议和路由层。</p>
+<h3 class="article-h3">平台、SaaS 和支付公司，为什么会在同一时间加速</h3>
+<p>也正因为如此，你会看到 Google、Shopify、Stripe、Visa、Mastercard 这些公司几乎在同一个时间窗口里明显提速。它们盯上的是一套新的交易堆栈。对企业来说，未来真正值钱的东西，越来越接近“我能不能成为 Agent 网络里绕不过去的一层”。</p>
+<p>有的公司在抢协议和标准，希望自己定义协作方式；有的公司在抢交易中间层，努力把商品、库存、报价、checkout、payment、风控这些能力做成可调用的底座；有的公司想拿下 AI 渠道分发权，让商家一次接入后，就能更顺畅地被 ChatGPT、Copilot、Gemini 这类对话式入口读取和调用；支付公司看得更深，它们关心的是，当 agent 真正开始付钱时，身份、授权、额度、风控和责任归属会落在谁手里。</p>
+<p>最深的一层变化，是流量平台正在向意图撮合平台挪动。过去大家争的是注意力，谁能把人留在自己的页面里，谁就更有优势。接下来，搜索、问答、推荐和购买会越来越多地压缩进同一段对话。用户不会再自己翻十个页面，而是把比较工作交给 agent。商家争夺的对象，也会从消费者眼球，逐步扩展到 agent 的默认选择权、信任权和调用顺位。很多今天被称为广告位的东西，未来可能会变成“优先进入推荐链路的资格”。</p>
+<p>计费方式也会跟着变化。CPM、CPC、seat fee、API 调用费当然不会立刻消失，但更贴近结果的收费会越来越多。谁带来了订单，谁提升了成交效率，谁降低了欺诈，谁把履约做得更顺，谁就更容易拿到分润。到那时，大家购买的会更像一种可验证、可交付的执行结果，软件使用权只是其中的一部分。</p>
+<p>我倒不觉得未来十年里大部分互联网平台会整齐划一地消失。更可能发生的，是很多平台仍然存在，却不再以今天熟悉的方式被使用。那些掌握供给、履约、支付、数据和信任能力的公司，位置依然很稳，只是前台会越来越薄；真正危险的是那些主要依赖界面包装和流量套利的产品，它们会更早被 agent 折叠进后台。</p>
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/7DKRKf5pG6Pf8icY7MqKp76uDibA3RhSjudPGj4xDNk0HW7ich3ckhc0E6hpm0SaM2xwKjWWOdzUjjnuPt3rbD7M5OOhUerdNXkGcibjFgCxMicM/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>小龙虾的钳子嘎嘎嘎</p>
+<hr class="article-divider" />
+<h3 class="article-h3">下一批“龙虾”，大概率会从高价值但仍然不够顺滑的场景里冒出</h3>
+<p>接下来几年，我最看好的，是那些价值高、流程长、信息碎、信任要求又高的行业。旅游、B2B 采购、金融服务周边、医疗行政、客服、软件生产、跨境电商，这些地方都很可能先冒出下一批“龙虾”。</p>
+<p>原因并不复杂。这样的领域里，人工流程本来就昂贵，标准化又没有低到可以完全模板化，刚好适合 agent 先吃掉大部分重复劳动，再把最后的确认权留给人。未来一两年里，更现实的形态多半会是 A2A 负责执行，A2H 负责授权：agent 先完成 80% 的搜集、判断、编排和推进，人来做最后 20% 的签字、背书和责任承担。</p>
+<p>与之一起长出来的，还会有一整套新的商业配角。围绕 AI 渠道的商品运营、agent catalog 优化、转化归因、AI checkout 运营，会慢慢从边缘工作变成真正的岗位。另一边，能够把能力打包成模板、插件、workflow、数字劳动力包的 marketplace 也会越来越多。到那个时候，大家卖的未必还是一个庞大的系统，更多时候，卖的是一段可部署、可调用、可复用的执行能力。</p>
+<p>品牌本身也会被重新理解。以前品牌主要服务消费者心智，讲的是认知、偏好和情感联想。往后它还要多服务一层“agent 心智”：信息是否结构化，描述是否可验证，供给是否稳定，售后是否低摩擦，支付和履约是否足够可信。品牌当然还是品牌，只是它的一部分会越来越像机器可读的基础设施。</p>
+<h3 class="article-h3">那些曾经惊艳全场的 Demo，最后为什么会沉下去</h3>
+<p>每一轮技术浪潮里，都会有很多让人拍案叫绝的 demo，最后却悄无声息地消失。问题通常不在“做得不聪明”，而在于它们没有真正长进真实世界。</p>
+<p>有些 demo 只解决了惊艳感，没有进入高频需求；有些看起来自动化很强，背后却离不开大量人工兜底；有些缺少授权、支付、信任和责任机制，永远只能停在展示层；还有一些则碰上最现实的问题——调用太贵、链路太长、结果不稳定，用户第一次觉得神奇，第二次就开始嫌麻烦了。</p>
+<p>真正能活下来的东西，往往都有几个共同点：它能嵌进现有工作流，能接上真实系统，能承担责任，能在成本上成立，也能在体验上足够顺手。技术的新鲜感负责把人吸引过来，真正决定生死的，还是复用率、可信度和单位经济。</p>
+<hr class="article-divider" />
+<h3 class="article-h3">写在最后</h3>
+<p>如果今天再回到最开始那个问题：Openclaw 到底算不算一场 revolution？我的答案大概是，它更像一次结构性爆发。很多前提条件已经在过去一段时间里悄悄到位，Openclaw 只是刚好把它们集中照亮了。它让更多人第一次真切感受到，Agent 已经不只是一个更聪明的助手，它开始长成新的入口，新的交易中介，新的协议参与者，甚至新的商业基础设施。</p>
+<p>比泡沫更值得警惕的，其实是我们会不会因为看见了泡沫，就错过了那些已经开始成形的结构变化。很多时候，关键问题不在于它今天是否完美，而在于它有没有把某种未来提前暴露出来。</p>
+<p>而我越来越确定，未来已经露出轮廓了。接下来真正重要的问题，也许不再只是“我们怎么使用 Agent”，而是当 Agent 开始彼此协作、彼此交易、彼此决策之后，人类会停留在哪一层，哪些产品会退场，哪些平台会被改写，哪些能力会变成新的护城河。至于下一个“龙虾”会从哪里冒出来，答案大概不会只落在某一个爆款工具上，而会出现在那些最先把协议、交易、信任和执行真正接起来的地方。</p>
+        </div>
+      </article>
+
+      <div class="article-back-section">
+        <a href="../index.html#writing" class="article-back-link">← 返回文章列表</a>
+      </div>
+    </main>
+
+    <footer class="site-footer" style="max-width: 760px; margin: 0 auto;">
+      <div class="footer-left">
+        <span>© 2026 Roger Yang</span>
+      </div>
+      <div class="footer-right">
+        <span>Designed &amp; built with focus, speed, and taste.</span>
+      </div>
+    </footer>
+
+    <script>
+      const glow = document.querySelector('.cursor-glow');
+      if (glow && window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', e => {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        });
+      }
+    </script>
+  </body>
+</html>

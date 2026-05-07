@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API 中转站的前世今生：从代购到基础设施，为何傅盛、孙宇晨和特朗普家族抢着下场？ — Roger Yang</title>
+    <meta name="description" content="从灰色代购到基础设施，AI 中转站正在变成 AI 时代的流量入口、支付入口和数据入口。三类截然不同的大玩家，盯上了同一件事。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../writing.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="article-site-header">
+      <a href="../index.html" class="article-back-home">Roger Yang</a>
+      <nav class="article-header-nav">
+        <a href="../index.html#writing">Writing</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article>
+        <div class="article-meta-top">
+          <span class="article-tag-badge">产业分析</span>
+          <span class="article-reading-time">12 min read</span>
+        </div>
+        <h1 class="article-title">API 中转站的前世今生：从代购到基础设施，为何傅盛、孙宇晨和特朗普家族抢着下场？</h1>
+        <div class="article-body">
+<p>引子：一个看似不起眼的赛道，吸引了三类大玩家</p>
+<p>生成式 AI 热潮不仅催生了各类大模型，也带火了一个曾被视为“小生意”的领域——AI API 中转站。这种服务最初只是帮开发者绕过地域限制、支付和接口差异，代购 GPT、Claude、Gemini 等模型的 API，因此常被称作“二道贩子”。</p>
+<p>然而到了 2025–2026 年，这个赛道突然变得热闹：猎豹移动前 CEO 傅盛推出 EasyRouter，主打“一次接入几十个模型”；加密世界的孙宇晨推广 B.AI，强调区块链地址登录和匿名支付；更令人意外的是，特朗普家族相关的加密项目 World Liberty Financial (WLFI) 与 WorldClaw 合作推出WorldRouter，宣称可以通过单一账户访问 300 多个主流模型，并用稳定币 USD1 结算。这些动向表明，AI 中转站已经不只是灰色代购，而是在成为 AI 时代的流量入口、支付入口和数据入口。</p>
+<h2 class="article-h2">中转站的诞生源于使用门槛和支付痛点</h2>
+<p>AI 中转站之所以出现，与早期使用大型语言模型的门槛有关。大模型服务商通常限制访问国家和地区，不支持地区访问会导致账户被封停。而海外信用卡、美元支付和多套接口也让开发者望而却步。如果想同时使用 GPT、Claude、Gemini、DeepSeek 等模型，需要注册多张信用卡、维护多套 SDK 和账单，这对于个人开发者和小团队来说非常繁琐。</p>
+<p>这种现实催生了技术“代购”。开源项目 One API、LiteLLM 通过兼容 OpenAI 接口统一调用多个模型，个人或团队基于这些项目搭建中转站，用订阅账号或账号池向无法直接使用海外模型的开发者提供服务。早期中转站的价值在于“降低接入难度”：不用申请海外账户、不用改写代码，就能使用多个模型。由于使用的是个人订阅账号，它们的价格往往低于官方 API，从而形成了依赖账号池和地区套利的灰色市场。</p>
+<h2 class="article-h2">监管收紧：灰色模式难以为继</h2>
+<p>2025 年后，平台和监管的变化压缩了灰色中转站的生存空间。一方面，AI 模型提供商开始收紧订阅绕道使用。例如 Anthropic 2026 年实施技术防护措施，阻止第三方利用订阅账号绕过官方 API 调用 Claude 模型。VentureBeat 报道指出，Anthropic 通过防止第三方应用伪装官方工具，切断了 Claude Pro/Max 固定套餐与自动化工具之间的接口。这意味着试图利用平价订阅无限调用模型的“拼车服务”被官方封堵。</p>
+<p>另一方面，中国监管部门也把生成式 AI 应用纳入备案和登记管理。国家互联网信息办公室 2026 年 1 月的公告称，2025 年新增 446 款生成式 AI 服务完成备案，通过 API 或其他方式直接调用已备案模型的应用必须在地方网信办登记，全年新增 330 款应用完成登记。截至 2025 年底，已备案生成式 AI 服务达到 748 款。这表明，利用中转站提供模型服务的应用也需要合规纳入管理。</p>
+<p>在平台封禁和监管要求的双重作用下，依靠订阅账号套利的灰色中转站大量倒闭或转型，行业开始从野蛮生长走向规范化和基础设施化。</p>
+<h2 class="article-h2">今天：中转站升级为 AI Gateway 与控制层</h2>
+<p>随着大模型数量激增和调用需求复杂化，现代中转站不再只是转发请求，而是升级为AI Gateway或LLM Gateway。这种新的基础设施承担三个关键角色：</p>
+<h3 class="article-h3">统一接口与多模型访问</h3>
+<p>开发者只需替换基础 URL 即可在不同模型之间切换，不必维护多套 SDK。以杜克大学的 AI Gateway 为例，它提供与 OpenAI 兼容的统一接口，并允许用户通过一个端点访问 GPT 5、Mistral 等多模型，同时内置用量追踪和成本管理。</p>
+<h3 class="article-h3">统一账单与成本控制</h3>
+<p>现代网关提供预付费或年度计划，支持 budgets、限额和充值管理。OpenRouter 的付费计划显示，平台提供按模型计价、自动路由、预算控制和 prompt 缓存等功能。企业用户可以通过一张账单管理多个模型的消耗，避免反复开票。</p>
+<h3 class="article-h3">稳定性、安全与可观测性</h3>
+<p>云厂商和机构推出的 AI Gateway 具备企业级安全、日志和缓存能力。Cloudflare AI Gateway 文档说明，该产品可通过缓存加速请求、实施速率限制、请求重试和模型回退，并提供分析和日志以观察使用情况。杜克大学的 AI Gateway 还强调其托管在本校基础设施，具有企业安全控制。</p>
+<p>因此，现代中转站已经从“模型代购”变成 AI 应用和模型供应商之间的控制平面，提供统一的接口、账单、路由和治理。</p>
+<hr class="article-divider" />
+<h2 class="article-h2">市场玩家：不同背景的大佬为何押注？</h2>
+<h3 class="article-h3">傅盛：看中开发者生态</h3>
+<p>猎豹移动前 CEO 傅盛推出 EasyRouter，主打一个接口调用多模型，定位是面向个人开发者和中小团队的基础设施。用户只需替换 base_url 和模型名称，就可在 GPT、Claude、Gemini、Qwen 等模型间自由切换，同时获得日志和企业服务支持。傅盛看重的，是多模型时代开发者工作流的入口。</p>
+<h3 class="article-h3">孙宇晨：嫁接加密支付</h3>
+<p>加密领域的孙宇晨在推广 B.AI 时强调区块链地址登录、匿名支付和代币经济。这类平台不仅提供模型调用，还试图把 AI 调用和加密支付打通，让用户用加密货币结算 API 费用，并通过代币激励社区。这将 AI 中转站变成加密支付的真实使用场景，而不仅是投机市场。</p>
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/mmbiz_png/7DKRKf5pG6Ns2ib1SQYlgnbbCfyiccuuD5LAfiathbt8sg4RQib3YSAGseWBbRrvIPqjhicM3AeR2zo98B7D2PHfq7UuibZuflBz19t33FqV82OrQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<h3 class="article-h3">特朗普家族相关的 WLFI / WorldRouter：面向 Agent 经济</h3>
+<p>2026 年 5 月，Odaily 报道称，WorldClaw 与 WLFI 合作推出了WorldRouter，这是特朗普家族相关的加密生态进军 AI 中转站的重要案例。新闻指出，WorldRouter 聚合了 300 多个主流 AI 模型，包括 Claude、GPT 和 Gemini，调用成本比 B.AI 低约 35%，并且原生支持 USD1 稳定币结算。借助 WLFI 推出的 AgentPay SDK，用户的 AI Agent 可以直接用 USD1 进行链上结算，实现从模型调用到任务支付的闭环。</p>
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/mmbiz_png/7DKRKf5pG6NlEZYHdVU4Sibiaq1p1ObZQfGcxz11WIfvfcKhqBpickV59ibo2IOLTAe5pxGJ4mmYQqBnsky97uJbteMlJZpllp6Wprn8us7Wpibg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>BloomingBit 等媒体进一步报道，WorldRouter 允许用户使用 USD1 在 BNB Chain 和 Solana 上支付，锁定 WLFI 代币的用户还可解锁更多 AI 功能。这意味着 WLFI 不满足于做模型聚合，而是试图将 AI 调用和稳定币支付深度绑定，为未来 Agent 经济提供完整的收付款渠道。</p>
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/mmbiz_png/7DKRKf5pG6Me2TLIwvTqEnA9KxMSMmh6UoS2JnbbxELYCqbytd9uyV01WNMJwsvTYe2LlyiaMibu0cA1aWPr3AiaicYexNlsCByjqyBOAgSKqVU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>三类玩家的出发点不同：傅盛关注开发者生态，孙宇晨侧重加密支付和全球流量，特朗普家族相关项目则押注于 Agent 经济的支付闭环。但他们都瞄准了同一件事——AI 调用层的控制权。</p>
+<hr class="article-divider" />
+<h2 class="article-h2">技术演化：从一次性生成到多步推理</h2>
+<p>AI 中转站的价值不仅在于降低接入难度，随着模型能力的迭代，开发者的使用模式也发生了变化。OpenRouter 和 a16z 发布的《State of AI 2025》报告指出，LLM 使用正在从单次文本生成转向多步骤、工具集成的推理流程，即“agentic inference”。报告显示，2025 年中，流经推理优化模型的 token 占比从几乎为零上升到超过 50%。这种转变既源于供给侧更强大的模型（如 GPT‑5、Claude 4.5、Gemini 3），也反映了需求侧更偏好支持多步逻辑和调用外部工具的模型。</p>
+<p>同一报告还指出，随着编程等复杂任务的增长，平均输入 token 长度在一年内增长近四倍，输出长度也接近三倍。这说明 AI 请求变得越来越长、越来越复杂，需要更大的上下文窗口和更稳定的路由机制。现代 AI Gateway 提供缓存、速率限制和动态路由，可以在不同模型之间自动切换、根据地区和负载优化请求，这正对应了复杂推理需求的增长。</p>
+'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+<h2 class="article-h2">  </h2>
+<hr class="article-divider" />
+<h2 class="article-h2">  </h2>
+<h2 class="article-h2">商业模式与数据价值：现金流好，但风险也大</h2>
+<p>与模型训练或应用产品相比，AI 中转站有一个显著优势——现金流。许多平台采用预付费或套餐制，用户先充值再消耗，平台按 token 使用扣费。这种模式天然提供资金沉淀，让平台在不大量投入市场营销的情况下持续运转。OpenRouter 提供免费、按量付费和企业版多种计划，并支持 budgets、优先供应商选择、prompt 缓存和数据策略路由。</p>
+<p>然而，中转站长期真正的价值在于数据。网关汇聚了海量请求日志，包含用户的提示词、调用模型、任务类型、地域分布和成本敏感度等。这些数据可以用于评估模型效果、指导供应商定价和训练蒸馏。OpenRouter 在其 100 万亿 token 数据研究中，就利用平台数据分析模型使用趋势、编程负载增长和地理差异，为开发者和投资者提供了洞察。</p>
+<p>但这种位置也带来风险。用户的提示词、代码和业务逻辑都可能经过中转站传输，如果平台缺乏明确的数据政策或没有隔离机制，可能导致敏感信息泄露。值得注意的是，OpenAI 和 Anthropic 明确规定其商业 API 的输入输出默认不用于训练模型。企业客户选择中转站时应关注平台是否支持不记录 prompt、是否提供自部署版本，以及是否符合《生成式人工智能服务管理暂行办法》的备案要求。</p>
+<hr class="article-divider" />
+<h2 class="article-h2">市场分化与未来趋势</h2>
+<p>随着行业规范化，AI 中转站正快速分化成几种形态：</p>
+<h3 class="article-h3">灰色号池型：依靠订阅账号和地区套利提供低价服务，但容易遭遇封号和跑路风险，难以持续。</h3>
+<h3 class="article-h3">开源自建型：企业或团队利用开源网关 (如 LiteLLM) 自行搭建，优点是安全可控，但需要运维能力，适合有工程资源的组织。</h3>
+<h3 class="article-h3">商业聚合型：如 OpenRouter、EasyRouter、B.AI、WorldRouter 等，面向个人开发者和中小团队提供统一接口、价格优化和支付服务。它们的竞争力主要在稳定性、定价、支付体系和企业服务。OpenRouter 官网显示，该平台自 2023 年早期作为首个 LLM 市场启动，现已拥有超过 8 百万用户、400 多个模型和 60 多个提供商。</h3>
+<h3 class="article-h3">企业级 AI Gateway：由云厂商如 Cloudflare、Azure 等提供，与现有安全体系结合，支持缓存、速率限制、请求重试、模型回退、数据防泄漏和 BYOK 加密密钥。这种模式更适合大型企业采购，重点是合规和可观测性。</h3>
+<p>未来，AI 中转站的角色可能进一步演变：</p>
+<h3 class="article-h3">升级为 AI 控制平面：不仅负责模型选择和请求路由，还要管理多模型协同、工具调度、成本优化和权限审计。</h3>
+<h3 class="article-h3">与支付系统结合：如 WorldRouter 的示例，未来 AI Agent 需要自动购买工具、调用模型、支付服务费用，中转站可能成为稳定币和跨境支付的重要入口。</h3>
+<h3 class="article-h3">利用平台数据优化供应与需求：通过分析请求日志，平台可以为模型供应商提供市场反馈，为开发者提供性价比建议，甚至通过数据蒸馏改进模型。</h3>
+<hr class="article-divider" />
+<h2 class="article-h2">写在最后：入口之争才刚开始</h2>
+<p>AI 中转站从灰色“代购店”走到今天的基础设施，经历了环境变化、技术升级和商业洗牌。傅盛看中的是开发者的使用入口，孙宇晨看中的是加密支付的场景，特朗普家族相关的 WLFI 看中的是 Agent 经济的闭环。有人形容淘金热里卖铲子的人最赚钱，但在 AI 时代，这句话需要更新：真正有远见的玩家不仅卖铲子，还掌握收银台和矿工的地图。</p>
+<p>未来的 AI 世界会有更多模型、更多插件和更多自主 Agent。统一接口、智能路由、成本治理、合规审计和支付结算将成为基础设施的一部分。AI 中转站的价值取决于它能否完成从“帮你调模型”到“帮你管 AI 生产系统”的跨越，并在技术与合规之间找到平衡。这个故事还远未完结。</p>
+'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+        </div>
+      </article>
+
+      <div class="article-back-section">
+        <a href="../index.html#writing" class="article-back-link">← 返回文章列表</a>
+      </div>
+    </main>
+
+    <footer class="site-footer" style="max-width: 760px; margin: 0 auto;">
+      <div class="footer-left">
+        <span>© 2026 Roger Yang</span>
+      </div>
+      <div class="footer-right">
+        <span>Designed &amp; built with focus, speed, and taste.</span>
+      </div>
+    </footer>
+
+    <script>
+      const glow = document.querySelector('.cursor-glow');
+      if (glow && window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', e => {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        });
+      }
+    </script>
+  </body>
+</html>

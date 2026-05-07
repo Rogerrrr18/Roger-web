@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>现在还有必要关注 Agent 的可观测性吗？ — Roger Yang</title>
+    <meta name="description" content="真正决定 Agent 能不能从 demo 走向产品的，往往不是它「会不会做」，而是你「看不看得见它是怎么做的、为什么做错了、下一次能不能更稳」。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../writing.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="article-site-header">
+      <a href="../index.html" class="article-back-home">Roger Yang</a>
+      <nav class="article-header-nav">
+        <a href="../index.html#writing">Writing</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article>
+        <div class="article-meta-top">
+          <span class="article-tag-badge">Agent</span>
+          <span class="article-reading-time">7 min read</span>
+        </div>
+        <h1 class="article-title">现在还有必要关注 Agent 的可观测性吗？</h1>
+        <div class="article-body">
+<p><strong>Agent 可观测性</strong>是指在生产环境中跟踪、监控和评估 Agent 应用程序的实践。</p>
+<p>这两年，Agent 的叙事几乎都围绕模型能力、工具调用、MCP、工作流编排在转。大家讨论的是：谁更像“数字员工”，谁能跑更长链路，谁能真正交付结果。</p>
+<p>但真正决定 Agent 能不能从 demo 走向产品的，往往不是它“会不会做”，而是你“看不看得见它是怎么做的、为什么做错了、下一次能不能更稳”。这也是为什么，到了今天，我反而觉得 Agent 可观测性不该被降温，而该被重新估值。OpenTelemetry 已经明确把 AI agent observability 单独拿出来讨论，并把它和 evaluation 放进同一条反馈闭环里：对非确定性的 Agent 来说，telemetry 不只是排障数据，也应该成为持续学习和评估的输入。</p>
+<p>很多人对“可观测性”这个词的误解，是把它理解成一个更漂亮的日志面板。但在 Agent 时代，它其实在变成另一种东西：一套描述 Agent 行为的通用语义层。OpenTelemetry 这边已经在推进 GenAI 的 semantic conventions，不只覆盖模型调用，也开始覆盖 agent 和 framework spans；它想统一的是输入、输出、操作细节、token 使用、错误与事件这些最基础的数据形状。只要一个赛道开始进入这种标准化阶段，它通常就不再只是“功能插件”，而是在往基础设施层走。</p>
+<p>为什么这件事在 Agent 身上尤其重要？因为 Agent 的失败，不像传统软件那样只表现为“报错”或“不报错”。一个 Agent 可以接口全部返回 200，但最后仍然把错误工具用在错误时机、拿错检索结果、在多轮状态里丢失上下文，或者给出表面流畅但业务上不可用的答案。Arize 对 tracing 的定义就很直白：你需要追踪的不只是延迟和异常，还包括检索文档、embedding、prompt 模板、tool description、function call 等整条执行链路。换句话说，Agent 的问题天生是 step-level 的；看不到步骤，就几乎无法做稳定产品化。</p>
+<figure class="article-figure"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/7DKRKf5pG6OiaqR2WibwvuUXfia4b0e172JibXllH2NrOJoib3bGxhONwCocCn9f3G1ug8gialOshPicIQebTrDlNqm581JlkFCibYhblcEiabGPgqGI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<hr class="article-divider" />
+<p>所以，第一个问题，<strong>observability 会不会像 Datadog for agents 一样成为必选层？</strong></p>
+<p>我的判断是：<strong>对真正进入生产环境的 Agent 来说，会；但它不会只长成一个“Agent 版 Datadog”。</strong></p>
+<p>一方面，传统 observability 厂商已经在往这里走。Datadog 的官方文档已经把 agent monitoring 做成独立能力，支持 OpenAI Agents SDK、LangGraph、CrewAI，并强调可以监控 error、latency、cost，查看 agent decisions 和 end-to-end execution trace，甚至基于 operational metrics 和开箱即用 eval 做异常洞察。这个信号很明确：基础设施巨头已经把 Agent 当成一个需要被长期监控的生产对象。</p>
+<p>但另一方面，Agent 的“好坏”并不等于“服务没挂”。Datadog 式的能力能回答系统稳不稳、贵不贵、慢不慢，却不天然回答它“答得对不对、选工具是否合理、结果是否满足业务标准”。这也是为什么 LangSmith、Langfuse、Braintrust 这些更 agent-native 的平台，都在把 observability 和 evaluation 绑在一起卖：LangSmith 直接把自己定义成观察、评估、部署 agent 的平台；Langfuse 说 tracing 是最重要的 observability 工具，但 eval 用来把“感觉更好”替换成“数据更好”；Braintrust 更进一步，把生产日志、离线评测、在线评分和部署串成一个闭环。</p>
+<p>这意味着，Agent 可观测性会成为必选层，但它最终更像是“<strong>Datadog + QA + 数据飞轮</strong>”的混合体，而不是旧世界监控工具的简单平移。它既要接住基础设施监控，又要接住模型质量判断，还要把生产流量重新变成改进数据。</p>
+<p>第二个问题，<strong>tracing 和 eval 会不会收敛成同一平台？</strong></p>
+<p>我的答案是：<strong>大概率会在工作流上收敛，但不一定会在厂商层面完全统一。</strong></p>
+<p>今天几乎所有头部产品都在往同一个方向靠。LangSmith 官方文档写得非常直接：它把 observability、evaluation、deployment 放进一个 integrated workflow；LangSmith 的产品页还明确说，trace 不是代码，才是 agent 做了什么、为什么这么做的唯一记录。Langfuse 也把 live evaluator 接到 tracing 之后；Braintrust 则把“生产 trace 一键进数据集，再做 offline eval，再回到 online scoring”当成核心方法论。</p>
+<p>但我不认为这会变成“一家吃掉全部”的单平台市场。更可能的形态是：<strong>trace 先收敛到相对标准的数据底座，eval 再作为更上层的质量操作系统叠上去。</strong> OpenTelemetry 正在推动 GenAI 和 agent 的语义规范，Langfuse 明确强调自己基于 OpenTelemetry 以降低 vendor lock-in，Arize/Phoenix 也强调 OTel 与 OpenInference 带来的兼容性。这说明数据面会越来越标准化；但在控制面，也就是在线评分、数据集管理、审查工作流、发布门禁这些环节，不同平台仍会拉开差距。</p>
+<p>所以 tracing 和 eval 的关系，将是“<strong>同一条闭环上游和下游的关系</strong>”。Tracing 提供事实，eval 提供判断；没有 tracing，eval 没有真实生产语料；没有 eval，tracing 只能告诉你发生了什么，却不能告诉你这件事算不算好。</p>
+<p>第三个问题，<strong>这一层真正的切入点，到底是“调试工具”，还是“生产环境的质量监控层”？</strong></p>
+<p>如果只看冷启动，我认为<strong>切入点</strong>仍然是<strong>调试工具</strong>。</p>
+<p>原因很简单：这是最刚需、最容易被工程团队立刻感知的痛点。LangSmith、Langfuse、Braintrust 对 tracing 的表述都高度一致：你需要看到完整执行轨迹、工具调用、检索步骤、时间线、成本与失败路径，先把“为什么错”这件事搞清楚。对还没上量的团队来说，这一步最容易付费，也最容易形成替代日志的第一价值。</p>
+<p>但如果看长期壁垒，我更倾向于生产环境的质量监控。</p>
+<p>因为一旦 Agent 真正在生产环境里跑起来，企业最在意的已经不只是“debug 一次错误”，而是“能不能持续发现质量漂移、能不能把线上失败自动变成评测集、能不能用统一标准决定某个版本该不该发”。Datadog 已经在做基于指标和 OOTB eval 的异常发现；Braintrust 已经把 production scoring 做成常态能力；LangSmith 也把 online eval、trajectory monitoring、alerts 放进了生产监控能力里。真正能产生预算黏性的，不是一次性排障，而是“<strong>持续质量治理</strong>”。</p>
+<p>从市场侧看，这个判断也能得到印证。无论是 LangChain 对 8 个 observability 平台的对比，还是 Agenta 对 open-source / SaaS 边界的梳理，大家都已经不再只比 tracing 能不能看，而是在比 tracing、evaluation、协作、prompt/workflow integration、自托管与合规能力谁更完整。赛道已经很卷，但卷的方向不是“谁的日志更花哨”，而是谁更像 Agent 时代的质量操作系统。</p>
+<hr class="article-divider" />
+<p>回到标题里的问题：<strong>现在还有必要关注 Agent 的可观测性吗？</strong></p>
+<p>我的答案是：<strong>不但有，而且现在看，正是它从“配角”走向“主角”的时间点。</strong></p>
+<p>模型能力越来越强，反而会让 Agent 的行为更复杂、更不可预期；工具调用越来越多，反而会让错误更像“流程偏差”而不是“程序异常”；真正的产品竞争，也会越来越从“谁能做出一个 Agent”转向“谁能把 Agent 稳定地跑在生产里”。而只要竞争进入这一阶段，可观测性就不再是附属模块，而是 Agent 产品化的前提、质量治理的入口，以及未来标准化基础设施的候选层。</p>
+        </div>
+      </article>
+
+      <div class="article-back-section">
+        <a href="../index.html#writing" class="article-back-link">← 返回文章列表</a>
+      </div>
+    </main>
+
+    <footer class="site-footer" style="max-width: 760px; margin: 0 auto;">
+      <div class="footer-left">
+        <span>© 2026 Roger Yang</span>
+      </div>
+      <div class="footer-right">
+        <span>Designed &amp; built with focus, speed, and taste.</span>
+      </div>
+    </footer>
+
+    <script>
+      const glow = document.querySelector('.cursor-glow');
+      if (glow && window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', e => {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 模型怎么选？先学会看懂评测榜单 — Roger Yang</title>
+    <meta name="description" content="绝大多数人在看这些榜单的时候，要么直接跳过，要么就记个总分，觉得分数高的就是最好的。今天系统聊聊 AI 评测榜单背后的逻辑。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../writing.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="article-site-header">
+      <a href="../index.html" class="article-back-home">Roger Yang</a>
+      <nav class="article-header-nav">
+        <a href="../index.html#writing">Writing</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article>
+        <div class="article-meta-top">
+          <span class="article-tag-badge">AI 评测</span>
+          <span class="article-reading-time">18 min read</span>
+        </div>
+        <h1 class="article-title">AI 模型怎么选？先学会看懂评测榜单</h1>
+        <div class="article-body">
+<p>上周Anthropic 发 Claude Opus 4.7 的时候，朋友圈被刷屏了。</p>
+<p>我照例去看了官方的发布材料，里面有一张 benchmark 对比图，七八行数字，GPQA Diamond 得分多少，HumanEval 多少，SWE-bench 多少，Humanity's Last Exam 多少，横排竖排密密麻麻。</p>
+<figure class="article-figure"><img src="https://zerore-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGZhMzg4ODQyMDU4NmJkNWYxNmI3NDYxNjNiYmIzY2ZfUkpVcHp0Q08walFyeENFZVRVM0hjdkYzbDJGRDB3WWhfVG9rZW46TGRLY2JoMlVab1RDeWR4dEJwbWNEbFk1bmxjXzE3Nzc4NTMzNTU6MTc3Nzg1Njk1NV9WNA" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>我发给身边一个用了 AI 三年的朋友，他看完问我，「所以哪个好？」</p>
+<p>我说，“你想用来干什么？”</p>
+<p>他说，“写代码。”</p>
+<p>我说，“那你应该看 GDPval-AA 和 SciCode，不是 GPQA Diamond。”</p>
+<p>他沉默了一会儿，说，“这些名词我一个都没听说过。”</p>
+<p>我觉得这个对话特别典型。绝大多数人在看这些榜单的时候，要么直接跳过，要么就记个总分，觉得分数高的就是最好的。但实际上这些 benchmark 背后测的东西差别很大，不同职业的人用 AI 的方式也不一样，看榜单的方法当然也不一样。</p>
+<p>今天这篇文章我们想系统聊聊这个话题，主要参考的是一个叫 Artificial Analysis 的独立第三方评测平台，地址是artificialanalysis.ai，这个网站是我目前见过的把大模型、生图模型、视频模型放在一起综合评测做得最全的一个。自己跑测评，不引用厂商声称的数字，覆盖 512 个以上的模型。</p>
+<p>好，我们从最基础的大模型榜单开始讲。</p>
+<hr class="article-divider" />
+<h2 class="article-h2">大模型的榜单，到底在测什么？</h2>
+<p>先说说Intelligence Index。</p>
+<p>Artificial Analysis 有一个自研的综合智能指数，叫 AA Intelligence Index，目前是 v4.0 版本，把 10 项评测的分数合成一个总分，你在他们的榜单上看到的那个数字就是这个。</p>
+<p>这 10 项评测，每一项测的都是不同的东西，我逐一说一下。</p>
+<p><strong>1. GPQA Diamond</strong></p>
+<p>这个是Google DeepMind 出的，Diamond 是里面最难的那个子集，一共 198 道题，都是专家级别的科学问题，覆盖生物、物理、化学三个方向。</p>
+<p>设计这套题的时候有个很有意思的要求，题目必须让博士级别的领域专家能做对，但同时让非专业人士就算去 Google 搜索也搜不到答案，所以叫 Google-Proof Q&A。</p>
+<p>它在测的是模型到底「真的懂」还是「记住了答案」，两者差距巨大。</p>
+<p><strong>2. Humanity's Last Exam，简称 HLE</strong></p>
+<p>这个名字就很卷，「人类的最后一次考试」，含义是当 AI 能通过这个考试的时候，人类在这类题目上就没有优势了。题目由来自各个领域的顶尖学者出题，覆盖数学、科学、人文，是目前公开评测里最难的综合测试。</p>
+<p>OpenAI 的 o1 刚出来的时候，HLE 只考了 8.8%。</p>
+<p>你没看错，8.8%。</p>
+<p>现在最强的模型大约能过 50%，进步很快，但也说明这套题确实在反映真实能力的天花板。</p>
+<p><strong>3. GDPval-AA</strong></p>
+<p>这个是Artificial Analysis 自研的，主要测代码生成和调试能力。很多人熟悉的 HumanEval 是 OpenAI 早期发布的 164 道Python 函数题，太简单了，现在很多模型都能接近满分，基本已经失去区分度。GDPval-AA 的题目复杂程度更高，更接近真实工程场景。</p>
+<p>还有一个SciCode，专门测科学编程，物理模拟、化学计算、生物数据处理这类，是研究员和科学家用 AI 写代码时候最相关的能力。</p>
+<p><strong>4. AA-Omniscience</strong></p>
+<p>这个我觉得是10 项里面最容易被普通用户忽视但实际上最重要的一个。</p>
+<p>它测的是幻觉率，就是模型会不会一本正经地说错话。</p>
+<p>你可能有过这种体验，问模型一个很确定的事实性问题，它给你一个听起来很有道理但完全错误的答案，还说得特别自信。这种「胡说八道但声音响亮」的现象就是幻觉。</p>
+<p>AA-Omniscience 用来测模型的知识可靠性，它在多大程度上知道自己不知道什么，而不是乱编一个答案出来。对于需要高精度信息的场景，这个分数比综合智能分更重要。</p>
+<p><strong>5. IFBench，Instruction Following Benchmark，指令跟随能力</strong></p>
+<p>这个特别实际。你让模型按格式输出，它输了吗？你说不要用 markdown，它还在用吗？你规定字数限制，它超了多少？</p>
+<p>指令跟随能力差的模型，用起来会非常折磨人，因为你需要反复纠正它，解释同一件事十遍。</p>
+<p><strong>6. AA-LCR，Long Context Reasoning，长文本推理能力</strong></p>
+<p>这测的是当你给模型喂入一个很长的文档，比如一份 50 页的合同，或者一整本书的内容，它能不能准确理解里面的细节，回答基于全文的问题，而不是靠文档开头结尾的几个字来蒙。</p>
+<p>很多模型在Context Window 上标着「支持 128K token」，但实际测下来，喂入的内容超过 20K 之后，对文档中间部分的理解就开始显著下降。AA-LCR 专门测这个，而不是只看窗口大小的标称值。</p>
+<p><strong>7. Terminal-Bench Hard</strong></p>
+<p>这个是斯坦福在2025 年发布的，测的是 AI 能不能在真实的命令行沙箱环境里完成复杂任务，需要多步骤规划、执行、碰到报错能不能自己修复。</p>
+<p>这就是在测Agent 能力，这个模型能不能自主完成一个有点复杂的工作流，而不是每走一步都需要人来确认。</p>
+<p><strong>8. CritPt，批判性思维测评</strong></p>
+<p>这个测的是模型面对一个论证或者一段推理的时候，能不能发现里面的逻辑漏洞，而不是因为听起来头头是道就同意。很多模型在「被人说服」这件事上特别容易，你稍微 push 一下它就改变答案了，这就是批判性思维不够的表现。</p>
+<p>好，8 个 benchmark 讲完了（还有两个暂无数据），你可能已经开始觉得有点乱。没关系，我给你整理一个思路。</p>
+<figure class="article-figure"><img src="https://zerore-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YmNiNGMwYmFmNDA0ZjA3MjBmNDEzNjk3NjhjNmMwZmZfVDFyejNWSlpIZE5yNm9URHM5Tm00N3FwMlhGMWNwSTVfVG9rZW46QkVBdWJDdk5Fb3JXUXh4RFVBU2MwQkYybjFmXzE3Nzc4NTMzNTU6MTc3Nzg1Njk1NV9WNA" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>Intelligence Index 这个综合分，把这些维度加权平均了一下。好处是方便比较，坏处是每个模型的擅长点不同，综合分高的模型不一定在你需要的那个维度上是最强的。</p>
+<p>所以看榜单不能只看总分，得往里钻。</p>
+<p>再说说性能这块，这是很多技术博主喜欢忽略但对普通用户其实最直接的部分。</p>
+<p>Artificial Analysis 追踪了三个核心性能指标，我把它叫做性能三角。</p>
+<p>第一个，Output Speed，每秒输出多少个 token，单位是 tps。</p>
+<p>当你跟 AI 聊天的时候，那种「字在屏幕上跑起来」的感觉，就是输出速度决定的。速度快的模型，跟你说话有种流动感，读起来很爽；速度慢的，你盯着光标闪，等待感很强。目前最快的 API 服务能到 200tps 以上，最慢的可能只有 20-30tps，差距是数量级的。</p>
+<p>第二个，Latency，首 token 延迟，就是你按下发送之后，等第一个字出来要多少秒。</p>
+<p>这跟上面的速度是两件不同的事。一个模型可能第一个字很慢才出来，但一旦开始输出就很快。还有一个模型可能第一个字出来很快，但整体速度慢。</p>
+<p>对于实时对话场景，比如语音助手、快速问答，首 token 延迟更重要，因为等待感主要来自「我按了发送但什么都没出现」这段时间。</p>
+<p>第三个，Price，每百万 token 的费用。</p>
+<p>Artificial Analysis 用了一个挺聪明的算法，按照 3 比 1 的输入输出比来计算混合价格，因为实际调用 API 的时候，输入的内容通常比输出要多。这个对个人用户关系不大，但如果你是开发者，或者你们公司有批量调用需求，价格差异可以非常显著，贵的模型跟便宜的模型一个量级的调用成本可以差十倍。</p>
+<p>还有一个Context Window，上下文窗口大小，就是模型在一次对话里能「看到」多少内容。这个指标有个坑，标称值跟实际有效使用范围差距很大，要结合 AA-LCR 的得分一起看才有意义。</p>
+<p>最后说说Openness Index，开放性指数。</p>
+<p>这是Artificial Analysis 自研的一个评分，专门用来衡量模型的开放程度，包括模型权重有没有公开、训练数据有没有披露、架构信息透不透明。</p>
+<p>对大多数普通用户，这个指标不太重要。但如果你的需求是「不想让数据传到境外服务器」，「需要在自己的私有云上部署」，「需要对模型做微调」，那开放性指数就是你首先要看的那个维度，因为这直接决定了这个模型能不能用在你的场景里。</p>
+<p>目前开放性最高的是 Meta 的 Llama 系列和阿里的Qwen 系列，GPT 和 Claude 这类闭源模型的开放性分数会低很多。</p>
+<p><strong>聊完了大模型，再说说生图和视频模型的榜单</strong></p>
+<figure class="article-figure"><img src="https://zerore-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=ODM0ZDcyNmJmYTI0ZTUwMmE5Zjg2NzVlMzA5M2NkYWNfcWJDblVGeEZHQklqM3IxWFVhV09ESGRwbnFkMU85eDVfVG9rZW46RGUwMWJ4aEp3b3h5blh4a2REWmNadEdTbldnXzE3Nzc4NTMzNTU6MTc3Nzg1Njk1NV9WNA" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p>很多人在选生图模型的时候会直接去看参数，多少亿参数啊，训练数据多大啊，分辨率支持多高啊。</p>
+<p>但这些参数跟你最终喜不喜欢出图的效果，实际上相关性很弱。</p>
+<p>Artificial Analysis 在生图模型这块，用了一个我觉得目前最诚实的评分方式，叫 Image Arena Elo。</p>
+<p>Elo 是国际象棋里用来给棋手排名的评分系统，原理是通过大量的对局结果来计算每个人的相对实力，你赢了高分选手加很多分，赢了低分选手加很少分。把这个系统移植到生图评测上，就是让真实用户在不知道是哪个模型生成的情况下，同时看两张图，只告诉你「哪张你更喜欢」。</p>
+<p>做几百万次这样的盲测之后，每个模型的 Elo 分数就反映了它的「人类审美投票排名」。</p>
+<p>这个方法绕开了一个根本性的难题，「好看」这件事没有客观标准。你没法用 PSNR 或者 FID 这类技术指标来衡量美感，因为数学上最优的图像不一定是人觉得最美的图像。Elo 的方法直接用人的偏好来投票，结果更接近真实使用体验。</p>
+<p>除了质量以外，生图模型还需要关注两个维度，生成速度和价格。</p>
+<p>速度是以 14 天的中位数来统计每张图的生成耗时，价格是每 1000 张图的成本。Artificial Analysis 目前覆盖了 122 个文生图和图像编辑模型，来自 10 个主要供应商，包括 OpenAI 的 DALL-E 系列、Black Forest Labs 的 FLUX 系列、Google 的 Imagen 系列等等。</p>
+<hr class="article-divider" />
+<h2 class="article-h2"><strong>顺带说一下视频模型</strong></h2>
+<p>视频生成的评测逻辑跟生图类似，也是用人类偏好投票来评质量，但还需要额外考虑运动一致性，就是视频里的物体移动是不是流畅自然，有没有帧间跳变和物理不合理的情况。</p>
+<p>成本维度会更复杂一些，因为视频有时长，不同模型的计费单位也不一样，有按秒收费的，有按帧收费的，横向比较需要换算成统一标准才有意义。</p>
+<p>说完了榜单的逻辑，现在来说最实用的部分。</p>
+<p><strong>按职业选模型</strong></p>
+<p>我发现一个很有意思的现象，同样用 AI，程序员和财务在乎的东西几乎是两件完全不同的事。</p>
+<p>我们一个一个来说。</p>
+<p>如果你是程序员或者工程师，你最需要关注的是代码能力相关的 benchmark，也就是 GDPval-AA、SciCode，还有指令跟随能力 IFBench。</p>
+<p>原因很直接，你用AI 写代码的时候，需要它理解你的技术要求，生成可以跑的代码，而且你说「这个函数要符合这个接口规范」的时候，它得真的照做，而不是给你一个看起来差不多但接口不对的东西。</p>
+<p>举个具体场景，你在做 code review，让 AI 帮你看一段代码有没有性能问题，需要给出具体的优化建议，格式是 markdown，前三条按优先级排序，这时候 IFBench 的分数就直接决定你有没有在跟一个靠谱的队友协作。</p>
+<ol class="article-list">
+<li><strong>如果你是财务或者会计，</strong>你最需要关注的是 AA-Omniscience，也就是幻觉率。</li>
+</ol>
+<p>财务工作里有一种错误是绝对不能有的，就是数字上的错误。AI 给你生成一份财务分析，里面的某个关键比率算错了，或者引用了一个不存在的会计准则，这种错误的代价可能是灾难性的。</p>
+<p>所以对财务来说，模型综合分是不是第一名不重要，它在知识可靠性上有没有做到「不确定就说不确定」才是核心指标。同时也要看 AA-LCR，因为财务经常要处理几十页的财报，需要模型准确理解全文。</p>
+<ol class="article-list">
+<li><strong>如果你是法务或者合规人员，</strong>优先级跟财务类似，但更偏向长文本。</li>
+</ol>
+<p>法务的日常工作很大一部分是读合同，几十页几百页的合同里，某一条款里的一个关键词可能就决定了责任归属。这时候你最需要的是模型能把这份文件从第一页读到最后一页，在任何位置都能准确回答你提问，这就是 AA-LCR 在测的东西。</p>
+<ol class="article-list">
+<li><strong>如果你是设计师，</strong>生图方向的 Image Arena Elo 分数是你最应该看的，配合生成速度来判断。</li>
+</ol>
+<p>有一些模型Elo 分数很高但生成要等三四十秒，如果你是在高频出图做创意迭代，等待时间会严重影响创作流。有些模型速度快，质量差一点，但够用，可能更适合你。</p>
+<p>另外设计师要注意一个细节，Arena Elo 反映的是「平均审美偏好」，不一定跟你个人的风格偏好完全一致。最好自己做一些实测，找到跟你审美最接近的那个模型。</p>
+<ol class="article-list">
+<li><strong>如果你是做运营或者内容创作，</strong>我建议你把 Intelligence Index 和 Price 放在同等重要的位置来看。</li>
+</ol>
+<p>内容创作是高频使用场景，你每天可能要跟 AI 交互几十上百次，用最贵的模型成本会很高，但用太便宜的模型质量又不够。在Intelligence/Price 的散点图上，找那个「性价比最高的象限」里的模型是你最合理的选择。</p>
+<ol class="article-list">
+<li><strong>如果你是研究员或者学术工作者，</strong>应该重点看 GPQA Diamond、HLE 和AA-Omniscience 这三个。</li>
+</ol>
+<p>研究场景的特殊性在于，你经常需要 AI 在你的专业领域给出高质量的答案，甚至跟你一起推进一个复杂的分析任务。这时候模型有没有真正的学科深度，知不知道自己的能力边界，比什么都重要。</p>
+<p>幻觉对研究工作的危害特别大，如果 AI 给你编了一篇不存在的参考文献，你没发现就引用了，后果很严重。</p>
+<ol class="article-list">
+<li><strong>如果你是产品经理，</strong>怎么说呢，你们的使用场景最杂，需求也最多变。</li>
+</ol>
+<p>我的建议是在Intelligence Index 和 Price 的二维散点图上看，找那个「刚好够用同时性价比最高」的模型。不要迷信最贵最强的，因为大部分产品工作用不到 GPQA Diamond 那种 PhD 级别的推理能力，多花那个钱不值得。</p>
+<figure class="article-figure"><img src="https://zerore-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=OTBmNzQwODUyYjE0Njk5NmQ1MmVkMzNjOTM4ZTJlYjBfNDZXSTRDRnhsREFjSUJ2R3NyckpnUDRTNnBBNDFtaTFfVG9rZW46SWtDMmJLV3Vrb2txYWR4Q2UyaGNzdTBCbm9oXzE3Nzc4NTMzNTU6MTc3Nzg1Njk1NV9WNA" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+<p><strong>按使用场景选模型</strong></p>
+<p>上面按职业聊的，更多是“你在工作里用 AI”的视角，但使用场景比职业更细，我列几个比较典型的情况。</p>
+<p>如果你是用 AI做日常聊天，随手问问问题，聊个想法，整理一下思路，那你对「智能」的要求其实不高，把 Intelligence Index 放在第二位，优先关注延迟和价格。延迟决定了聊天体验的即时感，价格决定了你每个月花多少钱，这两个对日常用户的体验影响远大于模型有没有博士级别的推理能力。</p>
+<p>如果你在用 AI写代码，尤其是接在 IDE 里用，比如 Cursor 或者 Copilot 这类，模型的代码能力是核心，同时输出速度也很关键，因为你在等补全建议的时候不希望停顿太久。这个场景下我建议先看 GDPval-AA 和 IFBench 的分数，再看 tps，按这个优先级来筛选。</p>
+<p>如果你的工作需要处理长文档，合同、研究报告、财报、会议记录，那 Context Window 和 AA-LCR 必须排在第一位，AA-Omniscience 排第二。</p>
+<p>有一个常见的坑需要说一下，很多模型的 Context Window 标称值是 1M token，但实际上在超过 100K 之后，对文档中间部分的理解就已经开始降级了。Artificial Analysis 的 AA-LCR 测试会在不同文档长度下测准确率，这个数据比光看标称值有用得多。</p>
+<p>如果你在搭Agent 工作流，或者你在用那些能自动完成任务的 AI 助手，Terminal-Bench Hard 的分数是你最应该看的单项指标。</p>
+<p>Agent 场景的核心挑战是什么，是模型在一系列步骤里碰到意外情况的时候，能不能自己判断怎么处理，而不是每一步都停下来问你。Terminal-Bench Hard 就是在模拟这种情况，在一个真实的命令行环境里给模型出难题，看它能不能扛住。</p>
+<p>同时，IFBench在 Agent 场景里也很重要，因为你在定义这个 Agent 的行为规范的时候，可能写了很多复杂的系统提示，如果模型指令跟随能力差，它会乱发挥，按照自己的「理解」来做事，而不是严格按你规定的来。</p>
+<p>如果你需要批量产出图文内容，比如电商详情页、社交媒体配图、广告素材，生图方向的三角是你的核心，Arena Elo 决定质量，生成速度决定效率，价格决定成本。这三个不可能全部最优，你需要根据自己的量级和预算来找平衡点，高频低质场景用便宜快速的，少量高质场景用 Elo 最高的。</p>
+<p>如果你们公司考虑私有化部署，或者你是技术人员在帮公司选自建 AI 系统的方案，Openness Index 是第一个要看的门槛指标。</p>
+<p>Openness Index 不够高的模型，基本意味着你拿不到模型权重，就没法在自己的服务器上跑，数据必须走外部 API，这对一些对数据安全要求高的行业来说是不可接受的。过了 Openness 这个门槛之后，再去看推理性能，也就是相同硬件条件下这个模型每秒能出多少 token，这直接决定了私有化部署的成本。</p>
+<hr class="article-divider" />
+<h2 class="article-h2">写在最后</h2>
+<p>我一直觉得，AI行业有一个很奇怪的现象，每家都说自己榜单第一，但大家测的不是同一件事。</p>
+<p>这不是欺骗，是真实存在的情况，因为不同模型确实有不同的强项，在不同维度上轮流第一是完全可能的。</p>
+<p><strong>但这也意味着，“哪个模型最好”这个问题，本身就是一个错误的问法。</strong></p>
+<p><strong>正确的问法应该是，“哪个模型最适合我的场景”。</strong></p>
+<p>Artificial Analysis 这个网站的价值就在这里，它不告诉你哪个模型最好，它给你足够的维度让你自己判断。你去 artificialanalysis.ai，选好你关心的那几个指标，按它排序，那个榜单就是专门为你的使用场景定制的。</p>
+<p>学会看榜单背后的逻辑，比记住今天哪个模型排第一更有价值。</p>
+<p>因为三个月之后排名可能就完全变了，但这套方法论，可以一直用下去。</p>
+<p>[参考资料]：https://artificialanalysis.ai/</p>
+<figure class="article-figure"><img src="https://zerore-ai.feishu.cn/space/api/box/stream/download/asynccode/?code=N2QyMjZmYmQ3NGFmNzA1YWRiOGI0ZWM2ZjQzOWRiNmRfc2ZGSDJpVk5WNHRWdVY5UmNleFlRMzY3T3lOYmNRVlNfVG9rZW46SWM0QWJCR1JNb3VRbUh4enVheGM3bVFQblROXzE3Nzc4NTMzNTU6MTc3Nzg1Njk1NV9WNA" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'" /></figure>
+        </div>
+      </article>
+
+      <div class="article-back-section">
+        <a href="../index.html#writing" class="article-back-link">← 返回文章列表</a>
+      </div>
+    </main>
+
+    <footer class="site-footer" style="max-width: 760px; margin: 0 auto;">
+      <div class="footer-left">
+        <span>© 2026 Roger Yang</span>
+      </div>
+      <div class="footer-right">
+        <span>Designed &amp; built with focus, speed, and taste.</span>
+      </div>
+    </footer>
+
+    <script>
+      const glow = document.querySelector('.cursor-glow');
+      if (glow && window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', e => {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        });
+      }
+    </script>
+  </body>
+</html>
