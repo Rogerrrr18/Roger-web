@@ -385,32 +385,16 @@ img {
   line-height: 1.65;
 }
 
-.belief-block {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2rem;
-  align-items: center;
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--gray-200);
-}
-
-.belief-block img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
 .belief-quote {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 500;
   letter-spacing: -0.02em;
+  margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
-.belief-block p:last-child {
+.about-text .belief-quote + p {
   font-size: 0.9rem;
   color: var(--gray-500);
   line-height: 1.7;
@@ -858,14 +842,6 @@ img {
 
   .about-portrait img {
     aspect-ratio: 4 / 3;
-  }
-
-  .belief-block {
-    grid-template-columns: 1fr;
-  }
-
-  .belief-block img {
-    max-width: 180px;
   }
 
   .gallery-grid {

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veritex — Roger Yang</title>
+    <meta name="description" content="通过语义理解实现高效文献检索，以 Chat & Search 为核心交互，结合 LangGraph 做意图识别与多源融合排序。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../writing.css" />
+    <style>
+      .work-meta-row {
+        display: flex; gap: 2.5rem; margin-top: 1.5rem;
+        padding-top: 1.5rem; border-top: 1px solid var(--gray-200); flex-wrap: wrap;
+      }
+      .work-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+      .work-meta-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); }
+      .work-meta-value { font-size: 0.9rem; font-weight: 500; color: var(--gray-700); }
+      .work-meta-value a { color: var(--gray-700); text-decoration: none; border-bottom: 1px solid var(--gray-300); }
+      .work-meta-value a:hover { border-bottom-color: var(--gray-600); }
+      .work-section { margin-bottom: 2.5rem; }
+      .work-section h2 {
+        font-family: var(--font-display); font-size: 0.78rem; font-weight: 600;
+        letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem;
+        color: var(--gray-400);
+      }
+      .work-section p { font-size: 0.92rem; line-height: 1.8; color: var(--gray-600); margin-bottom: 0.75rem; }
+      .work-section p:last-child { margin-bottom: 0; }
+      .work-section ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+      .work-section ul li { font-size: 0.92rem; line-height: 1.7; color: var(--gray-600); padding-left: 1.2em; position: relative; }
+      .work-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--gray-300); }
+      .work-divider { border: none; border-top: 1px solid var(--gray-200); margin: 2rem 0; }
+      .screenshot-gallery {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;
+      }
+      .screenshot-gallery img {
+        width: 100%; border-radius: 6px; border: 1px solid var(--gray-200);
+        cursor: zoom-in; transition: opacity 0.2s ease;
+      }
+      .screenshot-gallery img:hover { opacity: 0.85; }
+      .lightbox-overlay {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+        z-index: 1000; align-items: center; justify-content: center; cursor: zoom-out;
+      }
+      .lightbox-overlay.active { display: flex; }
+      .lightbox-overlay img { max-width: 90vw; max-height: 90vh; border-radius: 6px; object-fit: contain; }
+      @media (max-width: 640px) {
+        .screenshot-gallery { grid-template-columns: 1fr 1fr; }
+        .work-meta-row { gap: 1.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="article-site-header">
+      <a href="../index.html" class="article-back-home">Roger Yang</a>
+      <nav class="article-header-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article>
+        <div class="article-meta-top">
+          <span class="article-tag-badge">Research Agent</span>
+          <span class="article-tag-badge">LangGraph</span>
+        </div>
+        <h1 class="article-title">Veritex</h1>
+
+        <div class="work-section">
+          <p>传统关键词检索找到的往往不是你真正要的。Veritex 通过<strong>语义理解</strong>做文献检索——以 Chat &amp; Search 为核心交互，LangGraph 在底层做意图识别、查询扩展与多源融合排序，让研究者用自然语言就能找到真正相关的文献。</p>
+        </div>
+
+        <div class="work-meta-row">
+          <div class="work-meta-item">
+            <span class="work-meta-label">角色</span>
+            <span class="work-meta-value">产品 + 全栈开发</span>
+          </div>
+          <div class="work-meta-item">
+            <span class="work-meta-label">技术栈</span>
+            <span class="work-meta-value">LangGraph · Python · RAG</span>
+          </div>
+          <div class="work-meta-item">
+            <span class="work-meta-label">类型</span>
+            <span class="work-meta-value">Research Agent</span>
+          </div>
+          <div class="work-meta-item">
+            <span class="work-meta-label">GitHub</span>
+            <span class="work-meta-value"><a href="https://github.com/Rogerrrr18/Veritex" target="_blank" rel="noopener">Veritex ↗</a></span>
+          </div>
+        </div>
+
+        <hr class="work-divider" />
+
+        <div class="work-section">
+          <h2>产品截图</h2>
+          <div class="screenshot-gallery">
+            <img src="../assets/images/work/veritex-1.png" alt="Veritex 截图 1" loading="lazy" onclick="openLightbox(this.src)" />
+            <img src="../assets/images/work/veritex-2.png" alt="Veritex 截图 2" loading="lazy" onclick="openLightbox(this.src)" />
+            <img src="../assets/images/work/veritex-3.png" alt="Veritex 截图 3" loading="lazy" onclick="openLightbox(this.src)" />
+            <img src="../assets/images/work/veritex-4.png" alt="Veritex 截图 4" loading="lazy" onclick="openLightbox(this.src)" />
+            <img src="../assets/images/work/veritex-5.png" alt="Veritex 截图 5" loading="lazy" onclick="openLightbox(this.src)" />
+          </div>
+        </div>
+
+        <hr class="work-divider" />
+
+        <div class="work-section">
+          <h2>核心能力</h2>
+          <ul>
+            <li><strong>意图识别</strong> — 理解研究问题背后的真实意图，而非表面关键词</li>
+            <li><strong>查询扩展</strong> — 自动生成同义词、相关概念、领域术语，扩大检索覆盖面</li>
+            <li><strong>多源融合</strong> — 聚合多个学术数据库结果，统一格式与相关性评分</li>
+            <li><strong>智能重排</strong> — 基于语义相似度重新排序，最相关内容优先呈现</li>
+            <li><strong>Chat 模式</strong> — 支持对检索结果追问、比较和深度分析</li>
+          </ul>
+        </div>
+
+        <hr class="work-divider" />
+
+        <div class="work-section">
+          <h2>技术架构</h2>
+          <p>基于 LangGraph 构建有状态的多步骤检索 Agent，每个节点单一职责：意图解析 → 查询改写 → 多源检索 → 结果融合 → 重排序 → 生成摘要。</p>
+          <p>检索层接入多个学术数据库 API，向量相似度与关键词混合检索（Hybrid Search）提升召回质量，最终用 LLM 对 Top-K 结果结构化整理，输出可直接引用的参考资料列表。</p>
+        </div>
+
+        <div class="article-back-section">
+          <a href="../index.html#work" class="article-back-link">← Back to Work</a>
+        </div>
+      </article>
+    </main>
+
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+      function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.add('active');
+      }
+      function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
+  </body>
+</html>

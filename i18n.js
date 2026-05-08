@@ -12,7 +12,7 @@ const translations = {
     "blog.title": "Blog",
     "blog.desc": "关于 AI 产品、评测与行业趋势的独立观察。",
 
-    "hero.intro": "我是 Roger，base 上海。有足够强烈的好奇心和颠覆欲，习惯以玩乐和实验的心态去做事，也因此常常能在高强度创造中保持效率与热情。不迷信既有规则，不拘泥于条条框框，敢于挑战权威，也敢在必要的时候掀桌重来。",
+    "hero.intro": "我是 Roger，base 上海。拥有好奇心和颠覆欲，习惯以玩乐和实验的心态去做事，也因此常常能在高强度创造中保持效率与热情。不迷信既有规则，不拘泥于条条框框，敢于挑战权威，也敢在必要的时候掀桌重来。",
     "hero.focus": "Agent Orchestration, Growth, PMF",
     "hero.currentlyLabel": "Currently",
     "hero.currently": "M.S. at UCAS · Open to collaboration",
@@ -21,6 +21,7 @@ const translations = {
     "work.desc": "Selected projects I'm building or have contributed to.",
     "work.zhuangleme": "一款社交探索类应用，研究\u201C表达策略、身份包装与社交认知\u201D。把年轻人日常社交中的隐性规则做成可学习、可互动、可传播的产品体验。",
     "work.veritex": "通过语义理解实现高效文献检索。以 Chat & Search 交互为核心，结合 LangGraph 架构做意图识别、关键词扩展与多源融合排序。",
+    "work.zeval": "Agent 时代的评测基础设施。从真实对话日志中自动发现交互摩擦点，持续生成评测数据集，让 AI 产品团队第一次能用数据驱动 Agent 迭代。",
     "work.note1": "Aesthetic note — 我喜欢让产品像一部好电影，既有情绪张力，也有克制的结构感，同时也能够在业务和真实需求中生长。",
     "work.note2": "Future directions — A2A · 智能硬件 · Context sensor for agent",
 
@@ -73,6 +74,7 @@ const translations = {
     "work.desc": "Things I'm building.",
     "work.zhuangleme": "A social app exploring how people package identity and play the unwritten rules of self-presentation — making those hidden dynamics learnable and shareable.",
     "work.veritex": "Semantic-powered literature search. Chat-first interaction with LangGraph under the hood for intent parsing, query expansion, and cross-source ranking.",
+    "work.zeval": "Eval infrastructure for the Agent era. Automatically surfaces interaction friction from real conversation logs, generates regression test cases, and lets AI product teams iterate on agents with data.",
     "work.note1": "Aesthetic note — A good product should feel like a good film: emotionally resonant, structurally tight, and always grounded in real need.",
     "work.note2": "Next — A2A · Smart hardware · Context sensor for agent",
 
