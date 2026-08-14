@@ -41,6 +41,8 @@ const translations = {
 
     "journey.title": "Journey",
     "journey.desc": "把研究、产品与业务放进同一条实践路径里。",
+    "journey.bytedance.title": '字节跳动·火山引擎 Data-数据平台（Aide 团队）<span class="timeline-role">AI 产品经理</span>',
+    "journey.bytedance.desc": "参与企业级数据治理 Agent 建设，设计“治理知识库—参数化策略—执行 Skill”三层架构，沉淀可复用的治理经验并支持可解释推荐，推动治理收益提升 20%；搭建策略评测体系，以 A/B Test 验证收益，持续迭代策略生成逻辑。",
     "journey.nio.title": '蔚来汽车 NOMI 团队 <span class="timeline-role">AI 产品经理</span>',
     "journey.nio.desc": "主导车载 Agent 智能化评测闭环，从需求定义、评测集设计到结果归因与版本准出形成统一框架，并推动跨域多轮 Benchmark 与数据治理落地。",
     "journey.kr.title": '36氪·职升未来 <span class="timeline-role">AI 求职产品实习生</span>',
@@ -94,6 +96,8 @@ const translations = {
 
     "journey.title": "Journey",
     "journey.desc": "Research, product, and business on one track.",
+    "journey.bytedance.title": 'ByteDance · Volcano Engine Data Platform (Aide Team) <span class="timeline-role">AI Product Manager</span>',
+    "journey.bytedance.desc": "Building an enterprise data-governance Agent. Designed a three-layer architecture — governance knowledge base, parameterized strategies, and execution Skills — to make expertise reusable and recommendations explainable, lifting governance returns by 20%. Built a strategy-evaluation system and validated gains with A/B tests to continuously improve generation logic.",
     "journey.nio.title": 'NIO · NOMI <span class="timeline-role">AI Product Manager</span>',
     "journey.nio.desc": "Owned the evaluation loop for in-car Agents end to end — test design, attribution, release gating — and drove cross-domain benchmarking and data governance.",
     "journey.kr.title": '36Kr · ZhiSheng <span class="timeline-role">AI Product Intern</span>',
