@@ -108,7 +108,7 @@ if (!prefersReducedMotion && cursorGlow) {
 /* --- Scroll-based reveal --- */
 
 const revealTargets = document.querySelectorAll(
-  ".section-header, .work-item, .about-content, .belief-block, .gallery-grid, .film-row, .timeline-entry, .contact-link, .hero-intro, .hero-nav, .note-block"
+  ".section-header, .work-item, .about-content, .belief-block, .gallery-grid, .film-row, .timeline-entry, .contact-link, .hero-intro, .hero-nav, .note-block, .research-card, .featured-paper, .paper-row, .perspective-grid article"
 );
 
 if (!prefersReducedMotion) {
