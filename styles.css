@@ -955,6 +955,17 @@ img {
 .publication-figure figcaption strong { color: var(--gray-600); font-weight: 600; }
 .publication-figure--hero .publication-image { padding: 1.2rem; }
 .publication-figure--hero img { max-height: 490px; }
+.publication-md-row { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, .8fr); gap: 1rem; margin: 1rem 0 0 3.8rem; }
+.publication-md-row .publication-figure { margin: 0; }
+.publication-figure--md-model .publication-image { min-height: 235px; padding: 1rem; }
+.publication-figure--md-model img { width: 100%; }
+.publication-md-note { display: flex; flex-direction: column; justify-content: center; padding: 1.5rem; border-radius: 9px; background: #214738; color: #fff; }
+.publication-md-note span { color: #b9cfc1; font-size: .65rem; font-weight: 700; letter-spacing: .13em; }
+.publication-md-note h4 { margin: .8rem 0; font-family: var(--font-display); font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.2; }
+.publication-md-note p { margin: 0; color: #e0eae3; font-size: .82rem; line-height: 1.7; }
+.publication-figure--md-results { margin-top: 1rem; }
+.publication-figure--md-results .publication-image { padding: 1rem; }
+.publication-figure--md-results img { width: 100%; }
 .publication-figure-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 1rem; margin-left: 3.8rem; }
 .publication-figure-grid .publication-figure { margin: 0; }
 .publication-figure-column { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
@@ -980,9 +991,13 @@ img {
   .publication-heading { grid-template-columns: 1.8rem minmax(0, 1fr); gap: .7rem; margin-bottom: 1.2rem; }
   .publication-number { font-size: 1.2rem; }
   .publication-copy h3 { font-size: 1.25rem; }
-  .publication-figure, .publication-figure-grid, .publication-credit { margin-left: 0; }
+  .publication-figure, .publication-figure-grid, .publication-md-row, .publication-credit { margin-left: 0; }
   .publication-figure { padding: .65rem; }
   .publication-figure--hero .publication-image, .publication-figure--wide .publication-image { padding: .5rem; }
+  .publication-md-row { grid-template-columns: 1fr; }
+  .publication-figure--md-model .publication-image { min-height: 0; padding: .5rem; }
+  .publication-md-note { padding: 1.25rem; }
+  .publication-figure--md-results .publication-image { padding: .5rem; }
   .publication-figure-grid { grid-template-columns: 1fr; }
   .publication-figure--scheme .publication-image { min-height: 0; }
   .publication-figure--portrait .publication-image { min-height: 0; }
