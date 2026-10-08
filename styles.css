@@ -966,8 +966,13 @@ img {
 .publication-metric strong { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: -.05em; }
 .publication-metric span { font-size: .76rem; color: #d5e3d9; }
 .publication-credit { margin: .8rem 0 0 3.8rem; color: var(--gray-500); font-size: .72rem; line-height: 1.5; }
-.publication-figure--editorial { max-width: 520px; }
-.publication-figure--editorial .publication-image { padding: .75rem; }
+.publication-figure--nano-structure .publication-image { min-height: 350px; padding: 1rem; }
+.publication-figure--nano-performance { display: flex; flex-direction: column; }
+.publication-figure--nano-performance .publication-image { flex: 1; min-height: 450px; padding: 1rem; }
+.publication-figure--nano-performance img { max-height: 450px; }
+.publication-figure--nano-mechanism { margin-top: 1rem; }
+.publication-figure--nano-mechanism .publication-image { padding: 1rem; }
+.publication-figure--nano-mechanism img { max-height: 520px; }
 .publication-figure--wide .publication-image { padding: 1rem; }
 .publication-figure--wide img { width: 100%; }
 @media (max-width: 650px) {
@@ -981,6 +986,7 @@ img {
   .publication-figure-grid { grid-template-columns: 1fr; }
   .publication-figure--scheme .publication-image { min-height: 0; }
   .publication-figure--portrait .publication-image { min-height: 0; }
+  .publication-figure--nano-structure .publication-image, .publication-figure--nano-performance .publication-image { min-height: 0; }
   .publication-metric { min-height: 110px; }
 }
 .perspective-section { padding-bottom: 7rem; }
