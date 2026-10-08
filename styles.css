@@ -940,6 +940,13 @@ img {
 .research-evidence img { display: block; width: 100%; height: auto; border-radius: 3px; }
 .research-evidence figcaption { margin-top: .8rem; color: var(--gray-500); font-size: .72rem; line-height: 1.6; }
 .research-evidence figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.research-paper-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+.research-paper-figures figure { min-width: 0; margin: 0; }
+.research-paper-figures img { width: 100%; max-width: 546px; margin: 0 auto; object-fit: contain; }
+.research-paper-figures figcaption { max-width: 546px; margin: .6rem auto 0; }
+.research-figure-credit { margin: 1.3rem 0 0; color: var(--gray-500); font-size: .72rem !important; }
+.research-figure-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 640px) { .research-evidence { padding: 1.2rem; } .research-paper-figures { grid-template-columns: 1fr; gap: 1.5rem; } }
 .featured-paper { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.6rem; align-items: center; }
 .featured-paper-art img { width: 100%; border-radius: 6px; }
 .featured-paper-art p { margin-top: .6rem; font-size: .7rem; color: var(--gray-500); }
