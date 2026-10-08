@@ -6,7 +6,7 @@
     <title>Haoran (Roger) Yang — Materials Research & AI</title>
     <meta
       name="description"
-      content="Haoran (Roger) Yang: materials research, photothermal catalysis, scientific AI evaluation, publications and selected AI projects."
+      content="Haoran (Roger) Yang: AI for Science, energy materials, agent-guided synthesis, photothermal catalysis and research publications."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,11 +40,11 @@
           </div>
         </nav>
         <div class="hero-intro">
-          <p>I’m Haoran (Roger) Yang, a master’s researcher at UCAS studying photothermal catalysis and materials interfaces. I also design ways to evaluate scientific agents against experimental records, physical constraints and testable next steps.</p>
+          <p>I’m Haoran (Roger) Yang, a master’s researcher at UCAS studying photothermal catalysis and materials interfaces. I want to connect computation, materials design and experiments so scientific AI can learn from what works in the lab.</p>
           <div class="hero-meta">
             <div class="hero-meta-item">
               <span class="label">Focus</span>
-              <span>Photothermal catalysis · AI for Science</span>
+              <span>AI for Science · Energy Materials · Agent-Guided Synthesis</span>
             </div>
             <div class="hero-meta-item">
               <span class="label">Currently</span>
@@ -60,8 +60,8 @@
 
       <!-- Research: application-first evidence, with labeled editorial diagrams -->
       <section id="research" class="section research-section">
-        <div class="section-header"><span class="section-kicker">01 / RESEARCH</span><h2>Research</h2><p class="section-desc">I study how material structure shapes reactions, then ask how AI can help choose the next experiment.</p></div>
-        <div class="research-lead"><p>My research connects synthesis, structure and performance. In Ni/CeO₂ photothermal dry reforming, I examine the roles of Ni dispersion, ceria defects and metal–support interfaces in activity and stability. I use these experimental records to test evidence-grounded reasoning in scientific agents.</p><div class="research-keywords"><span>Catalysis</span><span>Materials interfaces</span><span>AI for Science</span><span>Experiment design</span></div></div>
+        <div class="section-header"><span class="section-kicker">01 / RESEARCH</span><h2>Research</h2><p class="section-desc">I study how material structure shapes reactions and how experimental evidence can guide the next research decision.</p></div>
+        <div class="research-lead"><p>My current work on Ni/CeO₂ photothermal dry reforming examines how metal dispersion, ceria defects and interfaces affect activity and stability. It motivates a broader question: how can AI help researchers screen ideas, design feasible materials and choose experiments that test uncertain predictions?</p><div class="research-keywords"><span>Energy materials</span><span>Materials interfaces</span><span>Scientific AI</span><span>Experiment design</span></div></div>
         <div class="research-grid">
           <article class="research-card"><img src="assets/images/research/catalysis-figure.svg" alt="Editorial diagram of light-driven methane and carbon dioxide reforming at a Ni/CeO₂ interface" loading="lazy"/><div class="research-card-body"><span class="research-card-label">MASTER'S RESEARCH · ONGOING</span><h3>What does catalyst structure change?</h3><p>I compare Ni/CeO₂ prepared by different routes and trace how dispersion, defects and interfaces affect CH₄/CO₂ activation, coking and deactivation.</p><small>Editorial schematic redrawn for this website; not an original paper figure.</small></div></article>
           <article class="research-card"><img src="assets/images/research/bench-figure.svg" alt="Concept diagram for PT-DRM-Bench, from experimental records to evidence checks and suggested experiments" loading="lazy"/><div class="research-card-body"><span class="research-card-label">THESIS PROJECT · IN DEVELOPMENT</span><h3>Putting scientific agents to the test</h3><p>PT-DRM-Bench is in development. It asks agents to check data quality, make evidence-bounded structure–performance inferences and select experiments that distinguish competing hypotheses.</p><small>Concept illustration; no published benchmark result is implied.</small></div></article>
@@ -93,7 +93,16 @@
         <div class="additional-publications"><h3>Additional first-author work</h3><p>Research Progress on Functional Modification on Magnetic Nanoparticle Surface and Its Application in Wastewater Treatment <span>· Industrial Minerals &amp; Processing, 2023</span></p><p>Evaluation Model and Promotion of Logistics Transportation D and A System Based on AHP <span>· CAMMIC / SPIE, 2023 · <a href="https://doi.org/10.1117/12.2686245" target="_blank" rel="noopener noreferrer">DOI ↗</a></span></p></div>
       </section>
 
-      <section id="perspective" class="section perspective-section"><div class="section-header"><span class="section-kicker">03 / POINT OF VIEW</span><h2>Where AI meets the lab</h2><p class="section-desc">Questions shaping my work, presented as research directions rather than settled findings.</p></div><div class="perspective-grid"><article><span>01</span><h3>Show the limits of evidence</h3><p>A scientific agent should separate measurements from hypotheses and make missing fields, unit errors and batch effects visible.</p></article><article><span>02</span><h3>Judge reasoning by the next experiment</h3><p>A useful suggestion should discriminate between competing explanations while respecting physical and laboratory constraints.</p></article><article><span>03</span><h3>Evaluate in real workflows</h3><p>Across catalysis and in-car agents, I focus on failure cases, data provenance and regression across versions rather than a single aggregate score.</p></article></div></section>
+      <section id="perspective" class="section perspective-section">
+        <div class="section-header"><span class="section-kicker">03 / RESEARCH INTERESTS</span><h2>Closing the loop between models and experiments</h2><p class="section-desc">I want to build AI methods for materials and chemical research that improve through experimental feedback, with energy materials as a starting point.</p></div>
+        <div class="perspective-grid">
+          <article><span>01</span><h3>Screen with uncertainty</h3><p>Machine learning can approximate costly quantum chemistry and molecular dynamics calculations to narrow the experimental search. I want to study where those estimates fail on new materials and conditions.</p></article>
+          <article><span>02</span><h3>Design candidates we can make</h3><p>Inverse design should account for synthesis routes, available precursors, cost and stability alongside target performance. A promising prediction matters most when it can reach the bench.</p></article>
+          <article><span>03</span><h3>Choose the next experiment</h3><p>With limited time and budget, active learning and multi-objective optimization can guide the next batch of samples or reaction conditions. Failed experiments should inform the next decision too.</p></article>
+          <article><span>04</span><h3>Make the research loop traceable</h3><p>Link literature, simulations, protocols, characterization and negative results. Agents can retrieve evidence and suggest experiments; researchers and measured outcomes test those suggestions.</p></article>
+        </div>
+        <p class="perspective-outlook">My test for these methods is whether results repeat in the lab and remain useful under realistic process or device conditions. I hope to develop them around a concrete materials system with a future research group.</p>
+      </section>
 
       <!-- Work -->
       <section id="work" class="section">
