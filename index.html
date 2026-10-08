@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -28,32 +28,31 @@
         <nav class="hero-nav">
           <div class="hero-nav-left">
             <span class="nav-dot"></span>
-            <a href="#research" data-i18n="nav.research">Research</a>
-            <a href="#publications" data-i18n="nav.publications">Papers</a>
-            <a href="#perspective" data-i18n="nav.perspective">Ideas</a>
-            <a href="#work" data-i18n="nav.work">Work</a>
-            <a href="#journey" data-i18n="nav.journey">Journey</a>
-            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Papers</a>
+            <a href="#perspective">Ideas</a>
+            <a href="#work">Work</a>
+            <a href="#journey">Journey</a>
+            <a href="#about">About</a>
           </div>
           <div class="hero-nav-right">
-            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
-            <a href="#contact" class="nav-cta" data-i18n="nav.cta">⮑ Get in touch</a>
+            <a href="#contact" class="nav-cta">⮑ Get in touch</a>
           </div>
         </nav>
         <div class="hero-intro">
-          <p data-i18n="hero.intro">我是杨皓然，正在中国科学院大学研究光热催化与材料界面。我也设计科学 Agent 的评测方法：让模型的判断回到实验记录、物理约束与下一步可验证的问题。</p>
+          <p>I’m Haoran (Roger) Yang, a master’s researcher at UCAS studying photothermal catalysis and materials interfaces. I also design ways to evaluate scientific agents against experimental records, physical constraints and testable next steps.</p>
           <div class="hero-meta">
             <div class="hero-meta-item">
               <span class="label">Focus</span>
-              <span data-i18n="hero.focus">Photothermal catalysis · AI for Science</span>
+              <span>Photothermal catalysis · AI for Science</span>
             </div>
             <div class="hero-meta-item">
-              <span class="label" data-i18n="hero.currentlyLabel">Currently</span>
-              <span data-i18n="hero.currently">M.Eng., UCAS · Shanghai Advanced Research Institute</span>
+              <span class="label">Currently</span>
+              <span>M.Eng., UCAS · Shanghai Advanced Research Institute</span>
             </div>
             <div class="hero-meta-item">
-              <span class="label" data-i18n="hero.bridgeLabel">Bridge</span>
-              <span data-i18n="hero.bridge">Materials ↔ Scientific AI</span>
+              <span class="label">Bridge</span>
+              <span>Materials ↔ Scientific AI</span>
             </div>
           </div>
         </div>
@@ -61,54 +60,49 @@
 
       <!-- Research: application-first evidence, with labeled editorial diagrams -->
       <section id="research" class="section research-section">
-        <div class="section-header"><span class="section-kicker">01 / RESEARCH</span><h2 data-i18n="research.title">Research</h2><p class="section-desc" data-i18n="research.desc">从真实实验出发，研究材料结构如何改变反应，并让 AI 帮助提出更好的下一次实验。</p></div>
-        <div class="research-lead"><p data-i18n="research.lead">我的主线是建立可检验的“合成—结构—性能”关系：在 Ni/CeO₂ 光热甲烷干重整中，区分颗粒尺寸、氧空位、金属载体界面与反应稳定性的作用；再用这些数据检验科学 Agent 的证据推理能力。</p><div class="research-keywords"><span>Catalysis</span><span>Materials interfaces</span><span>AI for Science</span><span>Experiment design</span></div></div>
+        <div class="section-header"><span class="section-kicker">01 / RESEARCH</span><h2>Research</h2><p class="section-desc">I study how material structure shapes reactions, then ask how AI can help choose the next experiment.</p></div>
+        <div class="research-lead"><p>My research connects synthesis, structure and performance. In Ni/CeO₂ photothermal dry reforming, I examine the roles of Ni dispersion, ceria defects and metal–support interfaces in activity and stability. I use these experimental records to test evidence-grounded reasoning in scientific agents.</p><div class="research-keywords"><span>Catalysis</span><span>Materials interfaces</span><span>AI for Science</span><span>Experiment design</span></div></div>
         <div class="research-grid">
-          <article class="research-card"><img src="assets/images/research/catalysis-figure.svg" alt="光照驱动的甲烷与二氧化碳在 Ni/CeO₂ 界面转化为合成气的重绘示意图" loading="lazy"/><div class="research-card-body"><span class="research-card-label" data-i18n="research.catalysis.label">MASTER'S RESEARCH · ONGOING</span><h3 data-i18n="research.catalysis.title">催化剂结构，决定了什么？</h3><p data-i18n="research.catalysis.text">比较不同合成路线下的 Ni/CeO₂，追踪 Ni 分散、CeO₂ 缺陷和界面结构如何影响 CH₄/CO₂ 活化、积碳与失活。</p><small data-i18n="research.catalysis.caption">示意图为本网站重绘，并非论文原图。</small></div></article>
-          <article class="research-card"><img src="assets/images/research/bench-figure.svg" alt="PT-DRM-Bench 从实验记录到证据检查和下一步实验建议的研究概念图" loading="lazy"/><div class="research-card-body"><span class="research-card-label" data-i18n="research.bench.label">THESIS PROJECT · IN DEVELOPMENT</span><h3 data-i18n="research.bench.title">让科学 Agent 接受实验检验</h3><p data-i18n="research.bench.text">PT-DRM-Bench 正在开发中，关注数据质量、证据约束下的结构—性能推理，以及能区分竞争假设的实验选择。</p><small data-i18n="research.bench.caption">研究设计示意图；尚未作为已发表的 benchmark 结果。</small></div></article>
+          <article class="research-card"><img src="assets/images/research/catalysis-figure.svg" alt="Editorial diagram of light-driven methane and carbon dioxide reforming at a Ni/CeO₂ interface" loading="lazy"/><div class="research-card-body"><span class="research-card-label">MASTER'S RESEARCH · ONGOING</span><h3>What does catalyst structure change?</h3><p>I compare Ni/CeO₂ prepared by different routes and trace how dispersion, defects and interfaces affect CH₄/CO₂ activation, coking and deactivation.</p><small>Editorial schematic redrawn for this website; not an original paper figure.</small></div></article>
+          <article class="research-card"><img src="assets/images/research/bench-figure.svg" alt="Concept diagram for PT-DRM-Bench, from experimental records to evidence checks and suggested experiments" loading="lazy"/><div class="research-card-body"><span class="research-card-label">THESIS PROJECT · IN DEVELOPMENT</span><h3>Putting scientific agents to the test</h3><p>PT-DRM-Bench is in development. It asks agents to check data quality, make evidence-bounded structure–performance inferences and select experiments that distinguish competing hypotheses.</p><small>Concept illustration; no published benchmark result is implied.</small></div></article>
         </div>
+        <figure class="research-evidence">
+          <div class="research-evidence-heading"><span class="research-card-label">FROM A PUBLISHED PAPER · 2022</span><h3>Seeing boron nitride nanotubes up close</h3><p>The original graphical abstract from our boron nitride nanotube synthesis paper pairs electron microscopy with the resulting tubular structure.</p></div>
+          <a href="https://www.sciopen.com/article/10.1016/j.jmat.2022.05.007?issn=2352-8478" target="_blank" rel="noopener noreferrer"><img src="assets/images/research/bnnt-graphical-abstract.jpg" alt="Original graphical abstract from Wang and Yang et al., showing electron micrographs of boron nitride nanotubes" loading="lazy" /></a>
+          <figcaption>Original graphical abstract, reproduced without alteration from Wang, Yang et al., <em>Journal of Materiomics</em> 8 (2022), 1199–1204. © 2022 The Chinese Ceramic Society. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>. <a href="https://doi.org/10.1016/j.jmat.2022.05.007" target="_blank" rel="noopener noreferrer">Paper ↗</a></figcaption>
+        </figure>
       </section>
 
       <section id="publications" class="section publications-section">
-        <div class="section-header"><span class="section-kicker">02 / PUBLICATIONS</span><h2 data-i18n="publications.title">Selected papers</h2><p class="section-desc" data-i18n="publications.desc">优先展示可核实的成果和我在其中的位置。通过 DOI 链接查看期刊页面。</p></div>
-        <div class="featured-paper"><div class="featured-paper-art"><img src="assets/images/research/adsorption-figure.svg" alt="已发表论文数据重绘：磷去除率 99.6%，氟去除率 73.5%" loading="lazy"/><p data-i18n="publications.figureNote">依据论文报告的条件与结果重绘；非出版物原图。</p></div><div class="featured-paper-copy"><span class="research-card-label" data-i18n="publications.firstAuthor">FIRST AUTHOR · 2025</span><h3>Advanced magnetic adsorbents for enhanced phosphorus and fluoride removal from wastewater</h3><p data-i18n="publications.featuredText">我主导了面向湿法磷酸废水的磁性介孔吸附剂研究，从材料制备到吸附动力学、等温线及 XPS/分子动力学机理分析，连接工业场景与原子尺度证据。</p><p class="paper-venue">Separation and Purification Technology 353, 128195</p><a class="text-link" href="https://doi.org/10.1016/j.seppur.2024.128195" target="_blank" rel="noopener noreferrer">DOI ↗</a></div></div>
-        <div class="paper-list"><article class="paper-row paper-row--visual"><span class="paper-index">02</span><img class="paper-thumb" src="assets/images/research/cu-interface-figure.svg" alt="Small 论文报告的 42.8% 光能到燃料效率重绘图" loading="lazy"/><div><span class="research-card-label" data-i18n="publications.coauthor">COAUTHOR · 2026</span><h3>Highly Dispersed Cu⁺–CeO₂ for Enhanced Solar-Driven Dry Reforming of Methane over Ni-Based Catalysts</h3><p>Small 22(44), e14302 · <span data-i18n="publications.smallText">合作研究：缺陷 CeO₂ 上的 Cu⁺ 调控 Ni 位点；论文报告 42.8% 光能到燃料效率。</span></p></div><a href="https://doi.org/10.1002/smll.202514302" target="_blank" rel="noopener noreferrer" aria-label="Open Small paper">↗</a></article><article class="paper-row paper-row--visual"><span class="paper-index">03</span><img class="paper-thumb" src="assets/images/research/ni-single-atom-figure.svg" alt="Nano Energy 论文报告的 35.4% 光能到燃料效率重绘图" loading="lazy"/><div><span class="research-card-label" data-i18n="publications.coauthor">COAUTHOR · 2026</span><h3>Engineering Local Coordination of Ceria-Anchored Ni Single Atoms to Boost Solar-Driven Dry Reforming of Methane</h3><p>Nano Energy 148, 111641 · <span data-i18n="publications.nanoText">合作研究：通过局部配位调控理解单原子 Ni 的活性与稳定性。</span></p></div><a href="https://doi.org/10.1016/j.nanoen.2025.111641" target="_blank" rel="noopener noreferrer" aria-label="Open Nano Energy paper">↗</a></article><article class="paper-row"><span class="paper-index">04</span><div><span class="research-card-label" data-i18n="publications.coauthor2022">COAUTHOR · 2022</span><h3>Highly Efficient Synthesis of Boron Nitride Nanotubes by Catalytic Chemical Vapor Deposition of Boron/Nickel-Containing Precursors</h3><p>Journal of Materiomics 8(6), 1199–1204</p></div><a href="https://doi.org/10.1016/j.jmat.2022.05.007" target="_blank" rel="noopener noreferrer" aria-label="Open Journal of Materiomics paper">↗</a></article></div>
-        <div class="additional-publications"><h3 data-i18n="publications.additional">Additional first-author work</h3><p>Research Progress on Functional Modification on Magnetic Nanoparticle Surface and Its Application in Wastewater Treatment <span>· Industrial Minerals &amp; Processing, 2023</span></p><p>Evaluation Model and Promotion of Logistics Transportation D and A System Based on AHP <span>· CAMMIC / SPIE, 2023 · <a href="https://doi.org/10.1117/12.2686245" target="_blank" rel="noopener noreferrer">DOI ↗</a></span></p></div>
+        <div class="section-header"><span class="section-kicker">02 / PUBLICATIONS</span><h2>Selected papers</h2><p class="section-desc">Published work, with my authorship clearly labeled. Follow the DOI links to journal records.</p></div>
+        <div class="featured-paper"><div class="featured-paper-art"><img src="assets/images/research/adsorption-figure.svg" alt="Editorial redraw of reported phosphorus and fluoride removal efficiencies" loading="lazy"/><p>Editorial redraw of reported values and conditions; not a figure from the publication.</p></div><div class="featured-paper-copy"><span class="research-card-label">FIRST AUTHOR · 2025</span><h3>Advanced magnetic adsorbents for enhanced phosphorus and fluoride removal from wastewater</h3><p>I led this study of a magnetic mesoporous adsorbent for wet-process phosphoric acid wastewater, connecting synthesis, adsorption kinetics and isotherms with XPS and molecular dynamics evidence.</p><p class="paper-venue">Separation and Purification Technology 353, 128195</p><a class="text-link" href="https://doi.org/10.1016/j.seppur.2024.128195" target="_blank" rel="noopener noreferrer">DOI ↗</a></div></div>
+        <div class="paper-list"><article class="paper-row paper-row--visual"><span class="paper-index">02</span><img class="paper-thumb" src="assets/images/research/cu-interface-figure.svg" alt="Editorial redraw of light-to-fuel efficiency reported in the Small paper" loading="lazy"/><div><span class="research-card-label">COAUTHOR · 2026</span><h3>Highly Dispersed Cu⁺–CeO₂ for Enhanced Solar-Driven Dry Reforming of Methane over Ni-Based Catalysts</h3><p>Small 22(44), e14302 · <span>Collaborative study of Cu⁺ on defective CeO₂ and its effect on Ni sites; the paper reports 42.8% light-to-fuel efficiency.</span></p></div><a href="https://doi.org/10.1002/smll.202514302" target="_blank" rel="noopener noreferrer" aria-label="Open Small paper">↗</a></article><article class="paper-row paper-row--visual"><span class="paper-index">03</span><img class="paper-thumb" src="assets/images/research/ni-single-atom-figure.svg" alt="Editorial redraw of light-to-fuel efficiency reported in the Nano Energy paper" loading="lazy"/><div><span class="research-card-label">COAUTHOR · 2026</span><h3>Engineering Local Coordination of Ceria-Anchored Ni Single Atoms to Boost Solar-Driven Dry Reforming of Methane</h3><p>Nano Energy 148, 111641 · <span>Collaborative study linking local coordination around single-atom Ni to catalytic activity and stability.</span></p></div><a href="https://doi.org/10.1016/j.nanoen.2025.111641" target="_blank" rel="noopener noreferrer" aria-label="Open Nano Energy paper">↗</a></article><article class="paper-row"><span class="paper-index">04</span><div><span class="research-card-label">COAUTHOR · 2022</span><h3>Highly Efficient Synthesis of Boron Nitride Nanotubes by Catalytic Chemical Vapor Deposition of Boron/Nickel-Containing Precursors</h3><p>Journal of Materiomics 8(6), 1199–1204</p></div><a href="https://doi.org/10.1016/j.jmat.2022.05.007" target="_blank" rel="noopener noreferrer" aria-label="Open Journal of Materiomics paper">↗</a></article></div>
+        <div class="additional-publications"><h3>Additional first-author work</h3><p>Research Progress on Functional Modification on Magnetic Nanoparticle Surface and Its Application in Wastewater Treatment <span>· Industrial Minerals &amp; Processing, 2023</span></p><p>Evaluation Model and Promotion of Logistics Transportation D and A System Based on AHP <span>· CAMMIC / SPIE, 2023 · <a href="https://doi.org/10.1117/12.2686245" target="_blank" rel="noopener noreferrer">DOI ↗</a></span></p></div>
       </section>
 
-      <section id="perspective" class="section perspective-section"><div class="section-header"><span class="section-kicker">03 / POINT OF VIEW</span><h2 data-i18n="perspective.title">Where AI meets the lab</h2><p class="section-desc" data-i18n="perspective.desc">这些是我目前研究与实践中形成的问题意识，不是已经得到证明的结论。</p></div><div class="perspective-grid"><article><span>01</span><h3 data-i18n="perspective.one.title">让模型指出证据边界</h3><p data-i18n="perspective.one.text">一个好的科学 Agent 应当能说清哪条结构—性能推断来自测量，哪条仍是假设；缺字段、单位错误或批次差异都应被显式处理。</p></article><article><span>02</span><h3 data-i18n="perspective.two.title">用下一次实验衡量推理</h3><p data-i18n="perspective.two.text">流畅的机理叙述容易产生；真正有价值的建议应能区分竞争解释，并满足实验室的物理与资源约束。</p></article><article><span>03</span><h3 data-i18n="perspective.three.title">把评测带回真实工作流</h3><p data-i18n="perspective.three.text">在催化研究和车载 Agent 项目中，我都更关注失败样例、数据来源和版本回归，而非单一总分。</p></article></div></section>
+      <section id="perspective" class="section perspective-section"><div class="section-header"><span class="section-kicker">03 / POINT OF VIEW</span><h2>Where AI meets the lab</h2><p class="section-desc">Questions shaping my work, presented as research directions rather than settled findings.</p></div><div class="perspective-grid"><article><span>01</span><h3>Show the limits of evidence</h3><p>A scientific agent should separate measurements from hypotheses and make missing fields, unit errors and batch effects visible.</p></article><article><span>02</span><h3>Judge reasoning by the next experiment</h3><p>A useful suggestion should discriminate between competing explanations while respecting physical and laboratory constraints.</p></article><article><span>03</span><h3>Evaluate in real workflows</h3><p>Across catalysis and in-car agents, I focus on failure cases, data provenance and regression across versions rather than a single aggregate score.</p></article></div></section>
 
       <!-- Work -->
       <section id="work" class="section">
         <div class="section-header">
-          <h2 data-i18n="work.title">Work</h2>
-          <p class="section-desc" data-i18n="work.desc">AI projects that shaped how I think about evidence, evaluation and useful tools.</p>
+          <h2>Work</h2>
+          <p class="section-desc">AI projects that shaped how I think about evidence, evaluation and useful tools.</p>
         </div>
         <div class="work-list">
           <a href="work/zeval.html" class="work-item">
             <div class="work-item-info">
               <h3>Zeval</h3>
-              <p data-i18n="work.zeval">Agent 时代的评测基础设施。从真实对话日志中自动发现交互摩擦点，持续生成评测数据集，让 AI 产品团队第一次能用数据驱动 Agent 迭代。</p>
+              <p>Eval infrastructure for the Agent era. Automatically surfaces interaction friction from real conversation logs, generates regression test cases, and lets AI product teams iterate on agents with data.</p>
             </div>
             <div class="work-item-meta">
               <span class="tag">AI Infra</span>
               <span class="arrow">⮑</span>
             </div>
           </a>
-          <a href="work/zhuangleme.html" class="work-item">
-            <div class="work-item-info">
-              <h3>zhuangleme</h3>
-              <p data-i18n="work.zhuangleme">一款社交探索类应用，研究"表达策略、身份包装与社交认知"。把年轻人日常社交中的隐性规则做成可学习、可互动、可传播的产品体验。</p>
-            </div>
-            <div class="work-item-meta">
-              <span class="tag">Social + AI</span>
-              <span class="arrow">⮑</span>
-            </div>
-          </a>
           <a href="work/veritex.html" class="work-item">
             <div class="work-item-info">
               <h3>Veritex</h3>
-              <p data-i18n="work.veritex">通过语义理解实现高效文献检索。以 Chat & Search 交互为核心，结合 LangGraph 架构做意图识别、关键词扩展与多源融合排序。</p>
+              <p>Semantic-powered literature search. Chat-first interaction with LangGraph under the hood for intent parsing, query expansion, and cross-source ranking.</p>
             </div>
             <div class="work-item-meta">
               <span class="tag">Research Agent</span>
@@ -121,31 +115,31 @@
       <!-- About -->
       <section id="about" class="section">
         <div class="section-header">
-          <h2 data-i18n="about.title">About</h2>
-          <p class="section-desc" data-i18n="about.desc">一个会写 PRD、能上代码、也盯增长的数据导向产品人。</p>
+          <h2>About</h2>
+          <p class="section-desc">Studying materials interfaces and the reliability of scientific AI.</p>
         </div>
         <div class="about-content">
           <div class="about-portrait">
-            <img src="assets/images/roger-hero.jpg" alt="杨皓然" />
+            <img src="assets/images/roger-hero.jpg" alt="Portrait of Haoran Yang" />
           </div>
           <div class="about-text">
-            <p data-i18n="about.bio">中国科学院大学硕士在读，聚焦 AI 产品从 PMF 验证到 MVP 落地。崇尚创意、艺术与科技的融合，也执着于增长和 ROI。</p>
+            <p>I am pursuing an M.Eng. in Materials and Chemical Engineering at the Shanghai Advanced Research Institute, UCAS. My work spans photothermal catalysis, interfacial mechanisms and the evaluation of AI tools used in scientific workflows.</p>
             <div class="capabilities">
               <div class="capability">
                 <h4>Researcher</h4>
-                <p data-i18n="about.builder">自主完成 AI 产品全栈开发，习惯快速试错并记录复盘，能在不确定中推进到可上线状态。</p>
+                <p>I connect characterization and computation to testable hypotheses about how structure affects catalytic behavior.</p>
               </div>
               <div class="capability">
                 <h4>Evaluator</h4>
-                <p data-i18n="about.operator">注重留存、转化与复购，通过指标看板和用户反馈闭环，持续校准功能优先级与商业价值。</p>
+                <p>I design cases, rubrics and failure analysis for scientific and product agents, with attention to provenance and regression.</p>
               </div>
               <div class="capability">
                 <h4>Builder</h4>
-                <p data-i18n="about.leader">4人团队负责人，承担产品方向、部分开发与运营协同，推动设计、技术与市场节奏一致。</p>
+                <p>I use LangGraph and Python to build literature-retrieval and agent-evaluation prototypes around research questions.</p>
               </div>
             </div>
-            <p class="belief-quote" data-i18n="about.beliefQuote">保持好奇，比保持正确更重要。</p>
-            <p data-i18n="about.beliefText">我会把灵感记在随手笔记里，来自电影、音乐、街头对话，也来自和团队的每次复盘。复杂问题先拆小，先跑起来，再打磨成作品。</p>
+            <p class="belief-quote">Make the next experiment answer a better question.</p>
+            <p>I break complex questions into claims that can be observed and challenged. Experiments, code and products need the same clear chain of evidence.</p>
           </div>
         </div>
       </section>
@@ -153,31 +147,31 @@
       <!-- Gallery -->
       <section id="gallery" class="section">
         <div class="section-header">
-          <h2 data-i18n="gallery.title">Gallery</h2>
-          <p class="section-desc" data-i18n="gallery.desc">生活瞬间也是灵感。</p>
+          <h2>Gallery</h2>
+          <p class="section-desc">Moments that feed the work.</p>
         </div>
         <div class="gallery-grid">
           <figure class="gallery-item vertical">
-            <img src="assets/images/gallery/fullsizerender-4.jpg" alt="海边拍照的 Roger" loading="lazy" />
+            <img src="assets/images/gallery/fullsizerender-4.jpg" alt="Roger by the sea" loading="lazy" />
           </figure>
           <figure class="gallery-item vertical">
-            <img src="assets/images/gallery/img-3227.jpg" alt="音乐唱片角落" loading="lazy" />
+            <img src="assets/images/gallery/img-3227.jpg" alt="Record collection" loading="lazy" />
           </figure>
           <figure class="gallery-item vertical">
-            <img src="assets/images/gallery/img-0506.jpg" alt="出行中的日常" loading="lazy" />
+            <img src="assets/images/gallery/img-0506.jpg" alt="Travel moment" loading="lazy" />
           </figure>
           <figure class="gallery-item vertical">
-            <img src="assets/images/gallery/img-cliff-13.jpg" alt="悬崖边的背影" loading="lazy" />
+            <img src="assets/images/gallery/img-cliff-13.jpg" alt="Person looking out from a cliff" loading="lazy" />
           </figure>
           <figure class="gallery-item horizontal">
-            <img src="assets/images/gallery/img-3226.jpg" alt="音乐书架" loading="lazy" />
+            <img src="assets/images/gallery/img-3226.jpg" alt="Records on a shelf" loading="lazy" />
           </figure>
           <figure class="gallery-item horizontal">
-            <img src="assets/images/gallery/img-stair-01.jpg" alt="楼梯上的人物光影" loading="lazy" />
+            <img src="assets/images/gallery/img-stair-01.jpg" alt="Sunlight on a stairway" loading="lazy" />
           </figure>
         </div>
         <div class="film-row">
-          <h3 data-i18n="gallery.filmTitle">Favorite Films</h3>
+          <h3>Favorite Films</h3>
           <div class="film-list">
             <figure class="film-card">
               <img src="assets/images/gallery/img-2294.jpg" alt="La La Land" loading="lazy" />
@@ -194,10 +188,10 @@
               </figcaption>
             </figure>
             <figure class="film-card">
-              <img src="assets/images/gallery/img-2296.jpg" alt="侧耳倾听" loading="lazy" />
+              <img src="assets/images/gallery/img-2296.jpg" alt="Listening" loading="lazy" />
               <figcaption>
                 <span class="film-rank">03</span>
-                <span data-i18n="gallery.film3">侧耳倾听</span>
+                <span>Whisper of the Heart</span>
               </figcaption>
             </figure>
           </div>
@@ -207,138 +201,51 @@
       <!-- Journey -->
       <section id="journey" class="section">
         <div class="section-header">
-          <h2 data-i18n="journey.title">Journey</h2>
-          <p class="section-desc" data-i18n="journey.desc">把研究、产品与业务放进同一条实践路径里。</p>
+          <h2>Journey</h2>
+          <p class="section-desc">Research, product, and business on one track.</p>
         </div>
         <div class="timeline">
           <article class="timeline-entry">
             <div class="timeline-date">2024 — 2027 (expected)</div>
-            <div class="timeline-body"><h4 data-i18n="journey.ucas.title">中国科学院大学 · 上海高等研究院 <span class="timeline-role">材料与化工硕士</span></h4><p data-i18n="journey.ucas.desc">研究 Ni/CeO₂ 光热催化与科学 Agent 评测；获 2025 年中国科学院研究所奖学金。</p></div>
+            <div class="timeline-body"><h4>University of Chinese Academy of Sciences · Shanghai Advanced Research Institute <span class="timeline-role">M.Eng., Materials and Chemical Engineering</span></h4><p>Research on Ni/CeO₂ photothermal catalysis and scientific-agent evaluation; CAS institute scholarship, 2025.</p></div>
           </article>
           <article class="timeline-entry">
             <div class="timeline-date">2026.06 — Present</div>
             <div class="timeline-body">
-              <h4 data-i18n="journey.bytedance.title">字节跳动·火山引擎 Data-数据平台（Aide 团队）<span class="timeline-role">AI 产品经理</span></h4>
-              <p data-i18n="journey.bytedance.desc">研究知识库、策略与执行 Skill 组成的企业数据治理 Agent 工作流；对比 Agent 生成策略与传统流程，实习项目报告治理成本降低 20%。</p>
+              <h4>ByteDance · Volcano Engine Data Platform (Aide Team) <span class="timeline-role">AI Product Manager</span></h4>
+              <p>Studied enterprise data-governance agent workflows combining a knowledge base, strategies and execution skills. An internal comparison reported 20% lower governance cost than the conventional workflow.</p>
             </div>
           </article>
           <article class="timeline-entry">
             <div class="timeline-date">2025.10 — 2026.03</div>
             <div class="timeline-body">
-              <h4 data-i18n="journey.nio.title">蔚来汽车 NOMI 团队 <span class="timeline-role">AI 产品经理</span></h4>
-              <p data-i18n="journey.nio.desc">从用户日志构造跨域多轮评测案例，分析车载 Agent 的失败模式并评估模型及上下文流程修订；内部评测中的任务成功率从 27% 升至 82%。</p>
+              <h4>NIO · NOMI <span class="timeline-role">AI Product Manager</span></h4>
+              <p>Built multi-turn, cross-domain benchmark cases from user logs and analyzed in-car agent failures. Internal evaluation reported task success rising from 27% to 82% after model and context-flow revisions.</p>
             </div>
           </article>
           <article class="timeline-entry">
             <div class="timeline-date">2025.06 — 2025.09</div>
             <div class="timeline-body">
-              <h4 data-i18n="journey.kr.title">36氪·职升未来 <span class="timeline-role">AI 求职产品实习生</span></h4>
-              <p data-i18n="journey.kr.desc">围绕 AI 求职产品做用户洞察、Prompt 体验优化与增长实验，沉淀 15+ 项指标看板并分析 500+ 条反馈，推动 7 日留存提升 15%，互动时长提升 30%。</p>
+              <h4>36Kr · ZhiSheng <span class="timeline-role">AI Product Intern</span></h4>
+              <p>User research, prompt UX, and growth experiments for an AI job-search product. 15+ dashboards, 500+ feedback entries analyzed. 7-day retention +15%, session time +30%.</p>
             </div>
           </article>
           <article class="timeline-entry">
             <div class="timeline-date">2024.06 — 2024.09</div>
             <div class="timeline-body">
-              <h4 data-i18n="journey.yitan.title">上海易碳 <span class="timeline-role">AI 产品实习生</span></h4>
-              <p data-i18n="journey.yitan.desc">参与工业碳核算 SaaS 建设，推动预测模型精度达标（MAPE &lt; 8%）并完成 API 产品化封装，同时协同梳理企业碳合规需求并推进 PRD 交付。</p>
+              <h4>Yitan Energy <span class="timeline-role">AI Product Intern</span></h4>
+              <p>Industrial carbon-accounting SaaS. Brought prediction accuracy to MAPE < 8%, shipped the API layer, and drove PRD delivery for enterprise compliance.</p>
             </div>
           </article>
-          <article class="timeline-entry"><div class="timeline-date">2020 — 2024</div><div class="timeline-body"><h4 data-i18n="journey.wit.title">武汉工程大学 <span class="timeline-role">无机非金属材料工程学士</span></h4><p data-i18n="journey.wit.desc">专业排名 7/101；2024 年国家奖学金。早期研究包括磁性纳米材料与氮化硼纳米管。</p></div></article>
-        </div>
-      </section>
-
-      <!-- Blog -->
-      <section id="blog" class="section">
-        <div class="section-header">
-          <h2 data-i18n="blog.title">Blog</h2>
-          <p class="section-desc" data-i18n="blog.desc">关于 AI 产品、评测与行业趋势的独立观察。</p>
-        </div>
-        <div class="blog-list">
-          <a href="writing/agent-observability.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>现在还有必要关注 Agent 的可观测性吗？</h3>
-              <p>真正决定 Agent 能不能从 demo 走向产品的，往往不是它「会不会做」，而是你「看不看得见它是怎么做的、为什么做错了、下一次能不能更稳」。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">Agent</span>
-                <span class="blog-read-time">7 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
-          <a href="writing/openclaw-a2a.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>从 Openclaw 到 A2A：Agent 正在重写产品与商业</h3>
-              <p>从 H2H，到 A2H，再到 A2A，连接关系正在慢慢改写。商业世界正在从「App 之间集成」走向「Agent 之间协商」。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">Agent</span>
-                <span class="blog-read-time">13 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
-          <a href="writing/agent-planning-eval.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>别再只看任务完成率了：Agent Planning 评测的真正位置</h3>
-              <p>任务完成率只是在问你最后有没有把活交上来；Planning 评测真正问的是：你有没有先想清楚路径、有没有走弯路、有没有浪费预算。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">Agent 评测</span>
-                <span class="blog-read-time">15 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
-          <a href="writing/ai-product-evaluation.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>为什么大多数 AI 产品团队，都在做「无效评测」</h3>
-              <p>做了很多评测，结果没用，你会开始怀疑是团队不行，是模型不行……很多时候，团队做的不是评测，而是一种看起来像评测的劳动。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">产品思考</span>
-                <span class="blog-read-time">11 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
-          <a href="writing/ai-benchmark-guide.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>AI 模型怎么选？先学会看懂评测榜单</h3>
-              <p>绝大多数人在看这些榜单的时候，要么直接跳过，要么就记个总分，觉得分数高的就是最好的。今天系统聊聊 AI 评测榜单背后的逻辑。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">AI 评测</span>
-                <span class="blog-read-time">18 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
-          <a href="writing/api-relay-history.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>API 中转站的前世今生：从代购到基础设施</h3>
-              <p>从灰色代购到基础设施，AI 中转站正在变成 AI 时代的流量入口、支付入口和数据入口。三类截然不同的大玩家，盯上了同一件事。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">产业分析</span>
-                <span class="blog-read-time">12 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
-          <a href="writing/gpt-image-2.html" class="blog-item">
-            <div class="blog-item-info">
-              <h3>GPT Image 2.0 来了，摧毁的难道只有设计行业吗？</h3>
-              <p>我测完 GPT Image 2.0 生成出的那些图，突然就笑不出来了。它冲击的不只是设计行业，而是我们用了几百年建立的「视觉证据可信」这个前提。</p>
-              <div class="blog-item-footer">
-                <span class="blog-tag">AI 产品</span>
-                <span class="blog-read-time">13 min read</span>
-              </div>
-            </div>
-            <span class="blog-item-arrow">⮑</span>
-          </a>
+          <article class="timeline-entry"><div class="timeline-date">2020 — 2024</div><div class="timeline-body"><h4>Wuhan Institute of Technology <span class="timeline-role">B.Eng., Inorganic Nonmetallic Materials Engineering</span></h4><p>Major rank 7/101; National Scholarship, 2024. Early research in magnetic nanomaterials and boron nitride nanotubes.</p></div></article>
         </div>
       </section>
 
       <!-- Contact -->
       <section id="contact" class="section">
         <div class="section-header">
-          <h2 data-i18n="contact.title">Get in touch</h2>
-          <p class="section-desc" data-i18n="contact.desc">如果你也有野心做一款伟大的产品，我们可以聊聊。</p>
+          <h2>Get in touch</h2>
+          <p class="section-desc">I welcome conversations about catalysis, AI for Science, research collaborations and PhD opportunities.</p>
         </div>
         <div class="contact-links">
           <a href="mailto:yanghaoran24@mails.ucas.ac.cn" class="contact-link">
@@ -381,16 +288,14 @@
         <span>© 2026 Roger Yang</span>
       </div>
       <div class="footer-right">
-        <span data-i18n="footer.text">Designed & built with focus, speed, and taste.</span>
+        <span>Designed & built with focus, speed, and taste.</span>
       </div>
     </footer>
 
     <dialog class="lightbox" id="lightbox">
-      <button class="lightbox-close" type="button" aria-label="关闭预览">×</button>
-      <img class="lightbox-image" alt="放大预览" />
+      <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+      <img class="lightbox-image" alt="Enlarged preview" />
     </dialog>
-
-    <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
